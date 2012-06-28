@@ -1,7 +1,3 @@
-import os
-
-os.chdir('exome')
-
 dict1=dict()
 inFile=open('sum_snp.exome_combined.sorted.pass012.new.nonsyn')
 

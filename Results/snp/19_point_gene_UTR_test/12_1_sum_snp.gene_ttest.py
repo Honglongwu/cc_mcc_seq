@@ -1,5 +1,5 @@
 dict1=dict()
-inFile=open('sum_snp.exome_combined.sorted.pass012.new.nonsyn')
+inFile=open('sum_snp.genome_combined.sorted.pass012.new.UTR')
 
 for line in inFile :
     line=line.strip()
@@ -20,7 +20,7 @@ d.sort(cmp=lambda x,y:cmp(x[1][0],y[1][0]),reverse=True)
 
 
 
-ouFile=open('sum_snp.exome_combined.sorted.pass012.new.nonsyn.point_ttest','w')
+ouFile=open('sum_snp.genome_combined.sorted.pass012.new.UTR.point_ttest','w')
 for item in d :
     ouFile.write(item[0]+'\t')
     ouFile.write('\t'.join([str(i) for i in item[1]])+'\n')
