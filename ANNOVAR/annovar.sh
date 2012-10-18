@@ -9,6 +9,9 @@ cd /netshare1/home1/szzhongxin/proj1/hansun/ANNOVAR
 #perl annovar/convert2annovar.pl --format vcf4 --includeinfo snpindel2_indel3030_raw.indel.recalibrated.vcf >snpindel2_indel3030_raw.indel.recalibrated.annovar
 
 
+#perl annovar/convert2annovar.pl --format vcf4 --includeinfo snp3/snpindel3_snp3030_raw.snp.recalibrated.vcf >snp3/snpindel3_snp3030_raw.snp.recalibrated.annovar
+#perl annovar/convert2annovar.pl --format vcf4 --includeinfo indel3/snpindel3_indel3030_raw.indel.recalibrated.vcf >indel3/snpindel3_indel3030_raw.indel.recalibrated.annovar
+
 #perl annovar/annotate_variation.pl -downdb gene annovar/humandb/ -buildver hg19
 #perl annovar/annotate_variation.pl -downdb avsift  annovar/humandb/ -buildver hg19
 #perl annovar/annotate_variation.pl -downdb genomicSuperDups  annovar/humandb/ -buildver hg19
@@ -30,15 +33,20 @@ cd /netshare1/home1/szzhongxin/proj1/hansun/ANNOVAR
 
 
 
-perl annovar/summarize_annovar.pl snp/snpindel_snp3030_raw.snp.recalibrated.annovar annovar/humandb --buildver hg19  --verdbsnp 135 --ver1000g 1000g2012feb -outfile sum_snp
-perl annovar/summarize_annovar.pl snp2/snpindel2_snp3030_raw.snp.recalibrated.annovar annovar/humandb --buildver hg19  --verdbsnp 135 --ver1000g 1000g2012feb -outfile sum_snp2
-perl annovar/summarize_annovar.pl indel/snpindel_indel3030_raw.indel.recalibrated.annovar annovar/humandb --buildver hg19  --verdbsnp 135 --ver1000g 1000g2012feb -outfile sum_indel
-perl annovar/summarize_annovar.pl indel2/snpindel2_indel3030_raw.indel.recalibrated.annovar annovar/humandb --buildver hg19  --verdbsnp 135 --ver1000g 1000g2012feb -outfile sum_indel2
+#perl annovar/summarize_annovar.pl snp/snpindel_snp3030_raw.snp.recalibrated.annovar annovar/humandb --buildver hg19  --verdbsnp 135 --ver1000g 1000g2012feb -outfile sum_snp
+#perl annovar/summarize_annovar.pl snp2/snpindel2_snp3030_raw.snp.recalibrated.annovar annovar/humandb --buildver hg19  --verdbsnp 135 --ver1000g 1000g2012feb -outfile sum_snp2
+#perl annovar/summarize_annovar.pl indel/snpindel_indel3030_raw.indel.recalibrated.annovar annovar/humandb --buildver hg19  --verdbsnp 135 --ver1000g 1000g2012feb -outfile sum_indel
+#perl annovar/summarize_annovar.pl indel2/snpindel2_indel3030_raw.indel.recalibrated.annovar annovar/humandb --buildver hg19  --verdbsnp 135 --ver1000g 1000g2012feb -outfile sum_indel2
+
+#perl annovar/summarize_annovar.pl snp3/snpindel3_snp3030_raw.snp.recalibrated.annovar annovar/humandb --buildver hg19  --verdbsnp 135 --ver1000g 1000g2012feb -outfile snp3/sum_snp3
+#perl annovar/summarize_annovar.pl indel3/snpindel3_indel3030_raw.indel.recalibrated.annovar annovar/humandb --buildver hg19  --verdbsnp 135 --ver1000g 1000g2012feb -outfile indel3/sum_indel3
 
 
-perl annovar/auto_annovar.pl -model recessive snp/snpindel_snp3030_raw.snp.recalibrated.annovar annovar/humandb --buildver hg19  --verdbsnp 135 --ver1000g 1000g2012feb -outfile auto_snp
-perl annovar/auto_annovar.pl -model recessive snp2/snpindel2_snp3030_raw.snp.recalibrated.annovar annovar/humandb --buildver hg19  --verdbsnp 135 --ver1000g 1000g2012feb -outfile auto_snp2
-perl annovar/auto_annovar.pl -model recessive indel/snpindel_indel3030_raw.indel.recalibrated.annovar annovar/humandb --buildver hg19  --verdbsnp 135 --ver1000g 1000g2012feb -outfile auto_indel
-perl annovar/auto_annovar.pl -model recessive indel2/snpindel2_indel3030_raw.indel.recalibrated.annovar annovar/humandb --buildver hg19  --verdbsnp 135 --ver1000g 1000g2012feb -outfile auto_indel2
+#perl annovar/auto_annovar.pl -model recessive snp/snpindel_snp3030_raw.snp.recalibrated.annovar annovar/humandb --buildver hg19  --verdbsnp 135 --ver1000g 1000g2012feb -outfile auto_snp
+#perl annovar/auto_annovar.pl -model recessive snp2/snpindel2_snp3030_raw.snp.recalibrated.annovar annovar/humandb --buildver hg19  --verdbsnp 135 --ver1000g 1000g2012feb -outfile auto_snp2
+#perl annovar/auto_annovar.pl -model recessive indel/snpindel_indel3030_raw.indel.recalibrated.annovar annovar/humandb --buildver hg19  --verdbsnp 135 --ver1000g 1000g2012feb -outfile auto_indel
+#perl annovar/auto_annovar.pl -model recessive indel2/snpindel2_indel3030_raw.indel.recalibrated.annovar annovar/humandb --buildver hg19  --verdbsnp 135 --ver1000g 1000g2012feb -outfile auto_indel2
 
 
+perl annovar/convert2annovar.pl --format vcf4 --includeinfo snv16s/var.flt.vcf >snv16s/snv16s.var.flt.annovar
+perl annovar/summarize_annovar.pl snv16s/snv16s.var.flt.annovar annovar/humandb --buildver hg19  --verdbsnp 135 --ver1000g 1000g2012feb -outfile snv16s/sum_snv16s

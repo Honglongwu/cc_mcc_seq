@@ -25,7 +25,7 @@ def snv_pattern(iFileList,xLabel) :
     dict1['SNV']=list(np.array(dict1['T>G/A>C'])+np.array(dict1['T>C/A>G'])+np.array(dict1['T>A/A>T'])+np.array(dict1['C>A/G>T'])+np.array(dict1['C>G/G>C'])+np.array(dict1['C>T/G>A']))
 
     pp=PyPlot()
-    pp.single_bar_multi_bar_vertical_proportion(dict1['SNV'],[dict1['T>G/A>C'],dict1['T>C/A>G'],dict1['T>A/A>T'],dict1['C>A/G>T'],dict1['C>G/G>C'],dict1['C>T/G>A']],xLabel)
+    pp.single_bar_multi_bar_vertical_proportion_ax(dict1['SNV'],[dict1['T>G/A>C'],dict1['T>C/A>G'],dict1['T>A/A>T'],dict1['C>A/G>T'],dict1['C>G/G>C'],dict1['C>T/G>A']],xLabel)
 
 
 snv_pattern(['SNV.genome.somatic.ICC4.new','SNV.genome.somatic.ICC5.new','SNV.genome.somatic.ICC9.new','SNV.genome.somatic.ICC10.new','SNV.genome.somatic.CHC5.new','SNV.genome.somatic.CHC6.new','SNV.genome.somatic.CHC7.new','SNV.genome.somatic.CHC10.new'],['ICC4','ICC5','ICC9','ICC10','CHC5','CHC6','CHC7','CHC10'])

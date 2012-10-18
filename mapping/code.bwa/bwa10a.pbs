@@ -2,15 +2,15 @@
 
 cd  /netshare1/home1/szzhongxin/proj1/hansun/mapping/10A
 
-bwa aln -I -t 6 \
-/netshare1/home1/people/hansun/GATK/bwa/hg19 \
-/netshare1/home1/szzhongxin/proj1/fudan/10A/10A_0107_w2q20m35_N_1.fq \
->10A.10A_0107_w2q20m35_N_1.sai
+#bwa aln -I -t 6 \
+#/netshare1/home1/people/hansun/GATK/bwa/hg19 \
+#/netshare1/home1/szzhongxin/proj1/fudan/10A/10A_0107_w2q20m35_N_1.fq \
+#>10A.10A_0107_w2q20m35_N_1.sai
 
-bwa aln -I -t 6 \
-/netshare1/home1/people/hansun/GATK/bwa/hg19 \
-/netshare1/home1/szzhongxin/proj1/fudan/10A/10A_0107_w2q20m35_N_2.fq \
->10A.10A_0107_w2q20m35_N_2.sai
+#bwa aln -I -t 6 \
+#/netshare1/home1/people/hansun/GATK/bwa/hg19 \
+#/netshare1/home1/szzhongxin/proj1/fudan/10A/10A_0107_w2q20m35_N_2.fq \
+#>10A.10A_0107_w2q20m35_N_2.sai
 
 
 bwa sampe  \

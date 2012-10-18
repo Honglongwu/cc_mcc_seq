@@ -15,4 +15,19 @@ cd /netshare1/home1/szzhongxin/proj1/hansun/SV/BreakDancer
 
 
 #breakdancer_max  fudan2.cfg  
-perl /netshare1/home1/people/hansun/MySoft/BreakDancer/breakdancer-1.0/BreakDancerMax.pl  fudan2.cfg
+#perl /netshare1/home1/people/hansun/MySoft/BreakDancer/breakdancer-1.0/BreakDancerMax.pl  fudan2.cfg
+#
+#
+#
+#
+#
+#
+perl /netshare1/home1/people/hansun/MySoft/BreakDancer/breakdancer-1.1_2010_10_25/perl/bam2cfg.pl  -g -h  \
+/netshare1/home1/szzhongxin/proj1/hansun/aftmapping/10A/10A.realigned.test.bam \
+>fudan.cfg 
+
+#breakdancer_max fudan.cfg >fudan.out1 
+#perl /netshare1/home1/people/hansun/MySoft/BreakDancer/breakdancer-1.0/BreakDancerMax.pl fudan.cfg >fudan.out2 
+/netshare1/home1/people/hansun/MySoft/BreakDancer/breakdancer-1.1_2010_10_25/cpp/breakdancer_max fudan.cfg >fudan.out
+
+

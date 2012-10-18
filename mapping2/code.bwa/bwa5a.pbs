@@ -19,6 +19,6 @@ bwa sampe  \
 5A.hiseq_20111018_lane4_w4q20m35_N.2.sai \
 /netshare1/home1/szzhongxin/proj1/fudan2/5A/hiseq_20111018_lane4_w4q20m35_N.1.fq \
 /netshare1/home1/szzhongxin/proj1/fudan2/5A/hiseq_20111018_lane4_w4q20m35_N.2.fq \
--r "@RG\tID:5a\tSM:5a\tLB:5a\tPL:illumina\tPU:barcode" \
+-r "@RG\tID:m5a\tSM:m5a\tLB:m5a\tPL:illumina\tPU:barcode" \
 >5A.hiseq_20111018_lane4_w4q20m35_N.sam
 
