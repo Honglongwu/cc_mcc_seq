@@ -35,15 +35,22 @@ import numpy as np
 import matplotlib.pyplot as plt 
 
 sample = ['ICC4','ICC5','ICC9','ICC10','CHC5','CHC6','CHC7','CHC10']
-line = ['dp>=0','dp>=3','dp>=5','dp>=10']
+
+#line1=r'D=$\sum_{i=0}^N|T_i-N_i|\quadT_i=1(d_i\geq1),T_i=0(d_i<1);N_i=1(d_i\geq1),N_i=0(d_i<1)$'
+line1=r'$T_i=1(d_i\geq1),\ \ T_i=0(d_i<1);\quadN_i=1(d_i\geq1),\ \ N_i=0(d_i<1)$'
+line2=r'$T_i=1(d_i\geq3),\ \ T_i=0(d_i<3);\quadN_i=1(d_i\geq3),\ \ N_i=0(d_i<3)$'
+line3=r'$T_i=1(d_i\geq5),\ \ T_i=0(d_i<5);\quadN_i=1(d_i\geq5),\ \ N_i=0(d_i<5)$'
+line4=r'$T_i=1(d_i\geq10),\ \ T_i=0(d_i<10);\quadN_i=1(d_i\geq10),\ \ N_i=0(d_i<10)$'
+line = [line1,line2,line3,line4]
 
 def plot(xList,ouFile):
     fig = plt.figure()
-    ax = fig.add_subplot(111)
+    ax = fig.add_axes([0.2,0.1,0.7,0.7])
     ax.plot(range(1,9),xList[0],range(1,9),xList[1],range(1,9),xList[2],range(1,9),xList[3])
     ax.set_xticks(range(10))
     ax.set_xticklabels(['']+sample+[''])
-    ax.legend(line,loc='upper left',bbox_to_anchor=[0.96,0.98],prop={'size':6})
+    ax.set_ylabel(r'Distance = $\sum_{i=0}^N|T_i-N_i|$')
+    ax.legend(line,loc='lower center',bbox_to_anchor=[0.5,1],prop={'size':8})
 
     plt.grid(True)
     plt.savefig(ouFile)
