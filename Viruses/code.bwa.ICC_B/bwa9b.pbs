@@ -5,6 +5,8 @@ read2fq=9B_GGCTAC_L001_w4q20m35_N_2.fq
 read1sai=9B_GGCTAC_L001_w4q20m35_N_1.sai
 read2sai=9B_GGCTAC_L001_w4q20m35_N_2.sai
 readsam=9B.GGCTAC_L001_w4q20m35_N.sam
+bam=9B.GGCTAC_L001_w4q20m35_N.bam
+bamsorted=9B.GGCTAC_L001_w4q20m35_N.sorted
 
 
 cd  /netshare1/home1/szzhongxin/proj1/hansun/mapping3/9B
@@ -26,6 +28,7 @@ $read1sai \
 $read2sai \
 /netshare1/home1/szzhongxin/proj1/fudan3/9B/$read1fq \
 /netshare1/home1/szzhongxin/proj1/fudan3/9B/$read2fq \
--r "@RG\tID:9b\tSM:9b\tLB:9b\tPL:illumina\tPU:barcode" \
->$readsam
+-r "@RG\tID:9b\tSM:9b\tLB:9b\tPL:illumina\tPU:barcode" | \
+samtools view -bS -o $bam -
 
+samtools  sort $bam $bamsorted
