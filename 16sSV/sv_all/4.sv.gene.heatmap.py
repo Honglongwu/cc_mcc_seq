@@ -14,7 +14,10 @@ def gene_heatmap(sampleNameList,ouF,figsize=0,rowList=[]):
                 D[item][row]+=1
         inFile.close()
 
-    print(len(D))
+    ouFile = open('16s.sv.exome','w') 
+    for k in D : 
+        ouFile.write(k + '\t' + '\t'.join([str(x) for x in D[k]])+'\n')
+
 
     LD = []
     geneList = []

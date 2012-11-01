@@ -14,9 +14,10 @@ def gene_heatmap(sampleNameList,ouF,figsize=0,rowList=[]):
                 D[item][row]+=1
         inFile.close()
 
-   
+    ouFile = open('12s.sv.exome','w') 
+    for k in D :
+        ouFile.write(k + '\t' + '\t'.join([str(x) for x in D[k]])+'\n')
 
-    print(len(D)) 
     ######
     D['DISC1']=D['DISC1/TSNAX-DISC1']
     D['FN1']=D['FN1/ABCA12/BARD1/ATIC']
