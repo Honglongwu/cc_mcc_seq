@@ -1,20 +1,20 @@
 #!/bin/bash
 
-cd  /netshare1/home1/szzhongxin/proj1/hansun/mapping/9A
+cd  /netshare1/home1/szzhongxin/proj1/hansun/Viruses/Viruses/mapping/9A
 
 bwa aln -I -t 6 \
-/netshare1/home1/people/hansun/GATK/bwa/hg19 \
+/netshare1/home1/szzhongxin/proj1/hansun/Viruses/Viruses/Viruses/bwa/hg19viruse \
 /netshare1/home1/szzhongxin/proj1/fudan/9A/9A_0107_w2q20m35_N_1.fq \
 >9A.9A_0107_w2q20m35_N_1.sai
 
 bwa aln -I -t 6 \
-/netshare1/home1/people/hansun/GATK/bwa/hg19 \
+/netshare1/home1/szzhongxin/proj1/hansun/Viruses/Viruses/Viruses/bwa/hg19viruse \
 /netshare1/home1/szzhongxin/proj1/fudan/9A/9A_0107_w2q20m35_N_2.fq \
 >9A.9A_0107_w2q20m35_N_2.sai
 
 
 bwa sampe  \
-/netshare1/home1/people/hansun/GATK/bwa/hg19 \
+/netshare1/home1/szzhongxin/proj1/hansun/Viruses/Viruses/Viruses/bwa/hg19viruse \
 9A.9A_0107_w2q20m35_N_1.sai \
 9A.9A_0107_w2q20m35_N_2.sai \
 /netshare1/home1/szzhongxin/proj1/fudan/9A/9A_0107_w2q20m35_N_1.fq \
