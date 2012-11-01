@@ -14,6 +14,8 @@ def gene_heatmap(sampleNameList,ouF,figsize=0,rowList=[]):
                 D[item][row]+=1
         inFile.close()
 
+    print(len(D))
+
     LD = []
     geneList = []
     for key in D :
