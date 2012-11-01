@@ -37,17 +37,23 @@ for k in D2 :
     print(D2[k])
 '''
 
+from PyStats.PyStatsClass import PyStats
+ps = PyStats()
 ouFile = open('16s.12s.tumor.normal.sv.exome','w')
 D3 = dict()
 for k in G:
     #ouFile.write(k+'\t')
     #ouFile.write(str(D.get(k,[0,0])[0]+D2.get(k,[0,0])[0])+'\t')
     #ouFile.write(str(D.get(k,[0,0])[1]+D2.get(k,[0,0])[1])+'\n')
-    D3.setdefault(k,[0,0])
+    D3.setdefault(k,[0,0,-1])
     D3[k][0] = D.get(k,[0,0])[0]+D2.get(k,[0,0])[0]
     D3[k][1] = D.get(k,[0,0])[1]+D2.get(k,[0,0])[1]
+    D3[k][2] = ps.fisher_test([20,8,D3[k][0],D3[k][1]])
+
+#for k in D3:
+#    print(D3[k])
 
 d = D3.items()
-d.sort(cmp=lambda x,y:cmp(x[1][0]+x[1][1],y[1][0]+y[1][1]))
+d.sort(cmp=lambda x,y:cmp(x[1][2],y[1][2]))
 for items in d:
-    ouFile.write(items[0]+'\t'+str(items[1][0])+'\t'+str(items[1][1])+'\n')
+    ouFile.write(items[0]+'\t'+str(items[1][0])+'\t'+str(items[1][1])+'\t'+str(items[1][2])+'\n')
