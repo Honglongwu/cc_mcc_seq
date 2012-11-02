@@ -3,18 +3,18 @@
 cd  /netshare1/home1/szzhongxin/proj1/hansun/Viruses/mapping2/9A
 
 bwa aln -I  \
-/netshare1/home1/szzhongxin/proj1/hansun/Viruses/Viruses/bwa/hg19viruse \
+/netshare1/home1/szzhongxin/proj1/hansun/Viruses/bwa/hg19viruse \
 /netshare1/home1/szzhongxin/proj1/fudan2/9A/D-M9A_w4q20m35_N_1.fq \
 >9A.D-M9A_w4q20m35_N_1.sai
 
 bwa aln -I  \
-/netshare1/home1/szzhongxin/proj1/hansun/Viruses/Viruses/bwa/hg19viruse \
+/netshare1/home1/szzhongxin/proj1/hansun/Viruses/bwa/hg19viruse \
 /netshare1/home1/szzhongxin/proj1/fudan2/9A/D-M9A_w4q20m35_N_2.fq \
 >9A.D-M9A_w4q20m35_N_2.sai
 
 
 bwa sampe  \
-/netshare1/home1/szzhongxin/proj1/hansun/Viruses/Viruses/bwa/hg19viruse \
+/netshare1/home1/szzhongxin/proj1/hansun/Viruses/bwa/hg19viruse \
 9A.D-M9A_w4q20m35_N_1.sai \
 9A.D-M9A_w4q20m35_N_2.sai \
 /netshare1/home1/szzhongxin/proj1/fudan2/9A/D-M9A_w4q20m35_N_1.fq \

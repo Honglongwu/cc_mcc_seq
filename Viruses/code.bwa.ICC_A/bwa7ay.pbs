@@ -3,18 +3,18 @@
 cd  /netshare1/home1/szzhongxin/proj1/hansun/Viruses/mapping/7A
 
 bwa aln -I -t 6 \
-/netshare1/home1/szzhongxin/proj1/hansun/Viruses/Viruses/bwa/hg19viruse \
+/netshare1/home1/szzhongxin/proj1/hansun/Viruses/bwa/hg19viruses \
 /netshare1/home1/szzhongxin/proj1/fudan/7A/hiseq_20110908_lane3_w4q20m35_N.1.fq \
 >7A.hiseq_20110908_lane3_w4q20m35_N.1.sai
 #
 bwa aln -I -t 6 \
-/netshare1/home1/szzhongxin/proj1/hansun/Viruses/Viruses/bwa/hg19viruse \
+/netshare1/home1/szzhongxin/proj1/hansun/Viruses/bwa/hg19viruses \
 /netshare1/home1/szzhongxin/proj1/fudan/7A/hiseq_20110908_lane3_w4q20m35_N.2.fq \
 >7A.hiseq_20110908_lane3_w4q20m35_N.2.sai
 
 
 bwa sampe  \
-/netshare1/home1/szzhongxin/proj1/hansun/Viruses/Viruses/bwa/hg19viruse \
+/netshare1/home1/szzhongxin/proj1/hansun/Viruses/bwa/hg19viruses \
 7A.hiseq_20110908_lane3_w4q20m35_N.1.sai \
 7A.hiseq_20110908_lane3_w4q20m35_N.2.sai \
 /netshare1/home1/szzhongxin/proj1/fudan/7A/hiseq_20110908_lane3_w4q20m35_N.1.fq \
