@@ -12,19 +12,19 @@ bamsorted=6B.AGTTCC_L006_w4q20m35_N.sorted
 
 cd  /netshare1/home1/szzhongxin/proj1/hansun/Viruses/mapping4/6B
 
-bwa aln -I -t 8 \
-/netshare1/home1/szzhongxin/proj1/hansun/Viruses/Viruses/bwa/hg19viruse \
+bwa aln -I -t 6 \
+/netshare1/home1/szzhongxin/proj1/hansun/Viruses/bwa/hg19viruses \
 /netshare1/home1/szzhongxin/proj1/fudan4/6B/$read1fq \
 >$read1sai
 
-bwa aln -I  -t 8 \
-/netshare1/home1/szzhongxin/proj1/hansun/Viruses/Viruses/bwa/hg19viruse \
+bwa aln -I  -t 6 \
+/netshare1/home1/szzhongxin/proj1/hansun/Viruses/bwa/hg19viruses \
 /netshare1/home1/szzhongxin/proj1/fudan4/6B/$read2fq \
 >$read2sai
 
 
 bwa sampe  \
-/netshare1/home1/szzhongxin/proj1/hansun/Viruses/Viruses/bwa/hg19viruse \
+/netshare1/home1/szzhongxin/proj1/hansun/Viruses/bwa/hg19viruses \
 $read1sai \
 $read2sai \
 /netshare1/home1/szzhongxin/proj1/fudan4/6B/$read1fq \
