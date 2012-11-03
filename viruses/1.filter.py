@@ -1,5 +1,5 @@
 import sys
-flags = [83, 77, 147, 163]
+flags = [83, 99, 147, 163]
 while True:
     line = sys.stdin.readline()
     if line:
