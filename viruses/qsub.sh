@@ -1,28 +1,29 @@
-CHC10A.sh
-CHC10B.sh
-CHC1A.sh
-CHC2A.sh
-CHC3A.sh
-CHC4A.sh
-CHC5A.sh
-CHC5B.sh
-CHC6A.sh
-CHC6B.sh
-CHC7A.sh
-CHC7B.sh
-CHC8A.sh
-CHC9A.sh
-ICC10A.sh
-ICC10B.sh
-ICC1A.sh
-ICC2A.sh
-ICC3A.sh
-ICC4A.sh
-ICC4B.sh
-ICC5A.sh
-ICC5B.sh
-ICC6A.sh
-ICC7A.sh
-ICC8A.sh
-ICC9A.sh
-ICC9B.sh
+cd /netshare1/home1/szzhongxin/proj1/hansun/viruses
+#qsub CHC10A.sh -l nodes=n5 -q high 
+#qsub CHC10B.sh -l nodes=n5 -q high 
+#qsub CHC1A.sh -l nodes=n5 -q high 
+#qsub CHC2A.sh -l nodes=n5 -q high 
+#qsub CHC3A.sh -l nodes=n5 -q high 
+#qsub CHC4A.sh -l nodes=n5 -q high 
+#qsub CHC5A.sh -l nodes=n5 -q high 
+#qsub CHC5B.sh -l nodes=n5 -q high 
+qsub CHC6A.sh -l nodes=cu13  
+qsub CHC6B.sh -l nodes=cu13  
+qsub CHC7A.sh -l nodes=cu13  
+qsub CHC7B.sh -l nodes=cu13
+qsub CHC8A.sh -l nodes=cu13
+qsub CHC9A.sh -l nodes=cu13
+qsub ICC10A.sh -l nodes=cu13
+qsub ICC10B.sh -l nodes=cu13
+qsub ICC1A.sh -l nodes=cu13
+qsub ICC2A.sh -l nodes=cu13
+qsub ICC3A.sh -l nodes=cu14
+qsub ICC4A.sh -l nodes=cu14
+qsub ICC4B.sh -l nodes=cu14
+qsub ICC5A.sh -l nodes=cu14
+qsub ICC5B.sh -l nodes=cu14
+qsub ICC6A.sh -l nodes=cu14
+qsub ICC7A.sh -l nodes=cu14
+qsub ICC8A.sh -l nodes=cu14
+qsub ICC9A.sh -l nodes=cu14
+qsub ICC9B.sh -l nodes=cu14
