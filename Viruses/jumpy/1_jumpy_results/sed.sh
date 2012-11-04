@@ -1,4 +1,4 @@
-#cd /netshare1/home1/szzhongxin/proj1/hansun/12sSV/jumpy/1_jumpy_results
+#cd /netshare1/home1/szzhongxin/proj1/hansun/Viruses/jumpy/1_jumpy_results
 #sed -i 's/invy/jumpy/g' 2.blastn.ICC1A.sh
 #sed -i 's/inv/jmp/g' 2.blastn.ICC1A.sh
 

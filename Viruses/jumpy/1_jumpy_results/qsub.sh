@@ -1,13 +1,17 @@
-cd /netshare1/home1/szzhongxin/proj1/hansun/12sSV/jumpy/1_jumpy_results 
-qsub 2.blastn.CHC1A.sh -l nodes=cu06
-qsub 2.blastn.CHC2A.sh -l nodes=cu07
-qsub 2.blastn.CHC3A.sh -l nodes=cu08
-qsub 2.blastn.CHC4A.sh -l nodes=cu09
-qsub 2.blastn.CHC8A.sh -l nodes=cu10
-qsub 2.blastn.CHC9A.sh -l nodes=cu11
-qsub 2.blastn.ICC1A.sh -l nodes=cu12
-qsub 2.blastn.ICC2A.sh -l nodes=cu13
-qsub 2.blastn.ICC3A.sh -l nodes=cu14
-qsub 2.blastn.ICC6A.sh -l nodes=cu15
-qsub 2.blastn.ICC7A.sh -l nodes=cu16
-qsub 2.blastn.ICC8A.sh -l nodes=cu17
+cd /netshare1/home1/szzhongxin/proj1/hansun/Viruses/jumpy/1_jumpy_results
+#qsub 2.blastn.CHC10A.sh -l nodes=n11 -q high 
+#qsub 2.blastn.CHC10B.sh -l nodes=n11 -q high 
+#qsub 2.blastn.CHC5A.sh -l nodes=n11 -q high 
+#qsub 2.blastn.CHC5B.sh -l nodes=n11 -q high 
+qsub 2.blastn.CHC6A.sh -l nodes=n11 -q high 
+#qsub 2.blastn.CHC6B.sh -l nodes=n3 -q high 
+qsub 2.blastn.CHC7A.sh -l nodes=n4 -q high 
+#qsub 2.blastn.CHC7B.sh -l nodes=n5 -q high 
+#qsub 2.blastn.ICC10A.sh -l nodes=n11 -q high 
+qsub 2.blastn.ICC10B.sh -l nodes=n6 -q high 
+qsub 2.blastn.ICC4A.sh -l nodes=n7 -q high 
+qsub 2.blastn.ICC4B.sh -l nodes=n13 -q high 
+qsub 2.blastn.ICC5A.sh -l nodes=n9 -q high 
+#qsub 2.blastn.ICC5B.sh -l nodes=n10 -q high 
+#qsub 2.blastn.ICC9A.sh -l nodes=n12 -q high 
+#qsub 2.blastn.ICC9B.sh -l nodes=n13 -q high 
