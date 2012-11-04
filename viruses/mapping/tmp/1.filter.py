@@ -12,6 +12,8 @@ for line in inFile:
         flag = int(fields[1])
         D.setdefault(flag, 0)
         D[flag] += 1
+        if flag != 4:
+            print(fields[9])
     except:
         pass
         
