@@ -8,10 +8,10 @@ bam=ICC10B.unmapped.bam
 
 cd /netshare1/home1/szzhongxin/proj1/hansun/viruses/mapping
 
-bwa aln -I \
-	        /netshare1/home1/szzhongxin/proj1/hansun/viruses/bwa/viruses \
-		        /netshare1/home1/szzhongxin/proj1/hansun/viruses/$read1fq \
-			        >$read1sai
+#bwa aln -I \
+#	        /netshare1/home1/szzhongxin/proj1/hansun/viruses/bwa/viruses \
+#		        /netshare1/home1/szzhongxin/proj1/hansun/viruses/$read1fq \
+#			        >$read1sai
 
 bwa samse  \
 	        /netshare1/home1/szzhongxin/proj1/hansun/viruses/bwa/viruses \
