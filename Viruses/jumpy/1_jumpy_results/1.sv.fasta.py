@@ -10,7 +10,7 @@ for line in inFile:
     line = line.strip()
     fields = line.split()
     if len(fields) > 2:
-        if fields[0].find('chr')!=0:
+        if fields[0].find('chr')!=0 and fields[0].find('NC')!=0:
             s = ''.join(fields[0:-1])
             n = 0
             for item in fields[0:-1]:
@@ -43,3 +43,4 @@ for key in sv:
             ouFile.write(sv[key][0]+'\n')
 
 ouFile.close()
+
