@@ -1,7 +1,7 @@
 cd /netshare1/home1/szzhongxin/proj1/hansun/Viruses/jumpy 
 
 
-hg19viruses=/netshare1/home1/szzhongxin/proj1/hansun/Viruses/bwa/hg19viruses
+hg19viruses=/netshare1/home1/szzhongxin/proj1/hansun/Viruses/bwa/hg19.viruses.fasta
 
 ICC4A=/netshare1/home1/szzhongxin/proj1/hansun/Viruses/mapping/4A/4A.bam
 ICC5A=/netshare1/home1/szzhongxin/proj1/hansun/Viruses/mapping/5A/5A.bam
