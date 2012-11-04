@@ -14,11 +14,11 @@ cd /netshare1/home1/szzhongxin/proj1/hansun/viruses/mapping
 #        >$read1sai
 
 bwa samse  \
-        /netshare1/home1/szzhongxin/proj1/hansun/viruses/bwa/viruses \
-        $read1sai \
-        /netshare1/home1/szzhongxin/proj1/hansun/viruses/$read1fq \
-        -r "@RG\tID:4a\tSM:4a\tLB:4a\tPL:illumina\tPU:barcode" | \
-        samtools view -bS -o $bam -
+/netshare1/home1/szzhongxin/proj1/hansun/viruses/bwa/viruses \
+$read1sai \
+/netshare1/home1/szzhongxin/proj1/hansun/viruses/$read1fq \
+-r "@RG\tID:4a\tSM:4a\tLB:4a\tPL:illumina\tPU:barcode" | \
+samtools view -bS -o $bam -
 
 #samtools  sort $bam $bamsorted
 
