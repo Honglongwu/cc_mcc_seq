@@ -37,8 +37,8 @@ ouFile = open(sys.argv[1].split('txt')[0]+'fasta','w')
 for key in sv:
     if sv[key]:
         fields = key.split(':')
-        if fields[1] in chrs and fields[3] in chrs:
-        #if fields[1] in chrs:
+        if (fields[1] in chrs and fields[3].find('NC')!=-1) or \
+                (fields[3] in chrs and fields[1].find('NC')!=-1):
             ouFile.write('>'+key+'\n')
             ouFile.write(sv[key][0]+'\n')
 
