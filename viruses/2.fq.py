@@ -7,7 +7,8 @@ for line in inFile:
     ouFile.write('@'+fields[0]+'\n')
     ouFile.write(fields[9]+'\n')
     ouFile.write('+'+'\n')
-    ouFile.write(fields[10]+'\n')
+    #ouFile.write(fields[10]+'\n')
+    ouFile.write('h'*len(fields[9])+'\n')
 inFile.close()
 ouFile.close()
 

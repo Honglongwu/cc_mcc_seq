@@ -5,6 +5,7 @@ cd /netshare1/home1/szzhongxin/proj1/hansun/viruses
 read1fq=ICC4B.unmapped.fq
 read1sai=ICC4B.unmapped.sai
 bam=ICC4B.unmapped.bam
+sam=ICC4B.unmapped.sam
 
 cd /netshare1/home1/szzhongxin/proj1/hansun/viruses/mapping
 
@@ -17,8 +18,8 @@ bwa samse  \
 /netshare1/home1/szzhongxin/proj1/hansun/viruses/bwa/viruses \
 $read1sai \
 /netshare1/home1/szzhongxin/proj1/hansun/viruses/$read1fq \
--r "@RG\tID:4a\tSM:4a\tLB:4a\tPL:illumina\tPU:barcode" | \
-samtools view -bS -o $bam -
+-r "@RG\tID:4a\tSM:4a\tLB:4a\tPL:illumina\tPU:barcode" >$sam
+#samtools view -bS -o $bam -
 
 #samtools  sort $bam $bamsorted
 
