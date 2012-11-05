@@ -1,6 +1,6 @@
 cd /netshare1/home1/szzhongxin/proj1/hansun/viruses
 #samtools view /netshare1/home1/szzhongxin/proj1/hansun/mapping2/7A/7A.bam |python 1.filter.py >CHC7A.unmapped
-python 2.fq.py CHC7A.unmapped
+#python 2.fq.py CHC7A.unmapped
 
 read1fq=CHC7A.unmapped.fq
 read1sai=CHC7A.unmapped.sai
