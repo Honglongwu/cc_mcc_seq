@@ -21,25 +21,26 @@ NC_len=5894
 num=0
 startend=[]
 for line in inFile :
-    num+=1
-    color = colors.linearlyInterpolatedColor(colors.white, colors.firebrick, 0, 10, num)
-    line=line.strip()
     fields=line.split('\t')
-    q_start=int(fields[7])
-    q_end=int(fields[8])
-    s_start=int(fields[9])
-    s_end=int(fields[10])
-
-    startend.append(q_start)
-    startend.append(q_end)
-    startend.append(s_start)
-    startend.append(s_end)
-
-    feature = SeqFeature(FeatureLocation(q_start,q_end),strand=+1)
-    #gds1_features.add_feature(feature,name=str(num),label=True,color=color)
-
-    feature = SeqFeature(FeatureLocation(s_start,s_end),strand=+1)
-    gds2_features.add_feature(feature,name=str(num),label=True,color=color)
+    if fields[1]=='NC_003977.1':
+        num+=1
+        color = colors.linearlyInterpolatedColor(colors.white, colors.firebrick, 0, 200, num)
+        line=line.strip()
+        q_start=int(fields[6])
+        q_end=int(fields[7])
+        s_start=int(fields[9])
+        s_end=int(fields[9])
+    
+        startend.append(q_start)
+        startend.append(q_end)
+        startend.append(s_start)
+        startend.append(s_end)
+    
+        feature = SeqFeature(FeatureLocation(q_start,q_end),strand=+1)
+        #gds1_features.add_feature(feature,name=str(num),label=True,color=color)
+    
+        feature = SeqFeature(FeatureLocation(s_start,s_end),strand=+1)
+        gds2_features.add_feature(feature,name=str(num),label=True,color=color)
 
 inFile.close()
 
@@ -61,5 +62,5 @@ link_xy =CrossLink((track_X,25,125),(track_Y,125,1125))
 gdd.cross_track_links.append(link_xy)
 '''
 
-gdd.draw(format='linear', pagesize=(15*cm,4*cm), fragments=1,start=1, end=max(startend))
+gdd.draw(format='linear', pagesize=(15*cm,4*cm), fragments=10,start=1, end=max(startend))
 gdd.write("GD_labels_default.pdf", "pdf")
