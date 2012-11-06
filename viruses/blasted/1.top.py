@@ -6,7 +6,7 @@ ouFile2 = open(sys.argv[1]+'.top2','w')
 for line in inFile:
     line = line.strip()
     fields = line.split('\t')
-    if int(fields[2])>95 and int(fields[3])>90:
+    if float(fields[2])>95 and float(fields[3])>90:
         D.setdefault(fields[0], [])
         D[fields[0]].append(line)
 inFile.close()
