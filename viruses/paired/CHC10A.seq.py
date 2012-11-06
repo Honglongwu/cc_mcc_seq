@@ -1,0 +1,46 @@
+import sys
+inF = 'CHC10A.unmapped.fa'
+inF2 = 'CHC10A.unmapped.sam.mapped.fa.fa.blasted.top'
+
+inFile = open(inF)
+D = dict()
+while True:
+    head = inFile.readline().strip()
+    seq = inFile.readline().strip()
+    if head:
+        D[head] = seq
+    else:
+        break
+inFile.close()
+
+inFile = open(inF2)
+ouFile = open(inF2 + '.seq1', 'w')
+ouFile2 = open(inF2 + '.seq2', 'w')
+ouFile3 = open(inF2 + '.seq3', 'w')
+ouFile4 = open(inF2 + '.seq4', 'w')
+for line in inFile:
+    line = line.strip()
+    fields =line.split('\t')
+    k = '>'+fields[0]
+    if k in D:
+        ouFile.write(k + '\n')
+        ouFile.write(D[k] + '\n')
+    else:
+        ouFile3.write(k.strip('>') + '\n')
+
+    fs = k.split(':')
+
+    if fs[7] == '1':
+        k2 = ':'.join(fs[0:7]+['2']+fs[8:])
+    if fs[7] == '2':
+        k2 = ':'.join(fs[0:7]+['1']+fs[8:])
+
+    if k2 in D:
+        ouFile2.write(k2 + '\n')
+        ouFile2.write(D[k2] + '\n')
+    else:
+        ouFile4.write(k2.strip('>') + '\n')
+
+inFile.close()
+
+
