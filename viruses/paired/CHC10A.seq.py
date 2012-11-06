@@ -19,7 +19,7 @@ D2 = dict()
 for line in inFile:
     line = line.strip()
     fields = line.split('\t')
-    D2[fields[0]]=line
+    D2['>' + fields[0]]=line
 inFile.close()
 
 inFile = open(inF2)
