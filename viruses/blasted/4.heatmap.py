@@ -3,19 +3,22 @@ import sys
 import math
 def gene_heatmap(sampleNameList, ouF, figsize=0, rowList=[]):
     D = dict()
+    D2 = dict()
     for i,inF in enumerate(sampleNameList):
         inFile = open(inF + '.unmapped.sam.mapped.fa.fa.blasted.top.num')
         for line in inFile:
             line = line.strip()
             fields =line.split('\t')
             D.setdefault(fields[0],[0]*16)
+            D2.setdefault(fields[0],[0]*16)
             D[fields[0]][i] = int(math.log(int(fields[1])+1,2))
+            D2[fields[0]][i] = int(fields[1])
 
         inFile.close()
-
-    for k in D :
-        print(k)
-        print(D[k])
+    
+    ouFile = open(ouF+'.data','w')
+    for k in D2 :
+        ouFile.write(k+'\t'+'\t'.join([str(x)for x in D2[k]])+'\n')
         
     LD = []
     geneList = []
