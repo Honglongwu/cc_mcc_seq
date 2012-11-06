@@ -1,6 +1,7 @@
 import sys
 inF = 'CHC10A.unmapped.fa'
 inF2 = 'CHC10A.unmapped.sam.mapped.fa.fa.blasted.top'
+inF3 = '../CHC10A.unmapped'
 
 inFile = open(inF)
 D = dict()
@@ -13,11 +14,19 @@ while True:
         break
 inFile.close()
 
+inFile = open(inF3)
+D2 = dict()
+for line in inFile:
+    line = line.strip()
+    fields = line.split('\t')
+    D2[fields[0]]=line
+inFile.close()
+
 inFile = open(inF2)
 ouFile = open(inF2 + '.seq1', 'w')
 ouFile2 = open(inF2 + '.seq2', 'w')
 ouFile3 = open(inF2 + '.seq3', 'w')
-ouFile4 = open(inF2 + '.seq4', 'w')
+
 for line in inFile:
     line = line.strip()
     fields =line.split('\t')
@@ -36,11 +45,17 @@ for line in inFile:
         k2 = ':'.join(fs[0:7]+['1']+fs[8:])
 
     if k2 in D:
-        ouFile2.write(k2 + '\n')
-        ouFile2.write(D[k2] + '\n')
+        ouFile.write(k2 + '\n')
+        ouFile.write(D[k2] + '\n')
     else:
-        ouFile4.write(k2.strip('>') + '\n')
+        ouFile2.write(k + '\n')
+        ouFile2.write(D[k] + '\n')
+        ouFile2.write(k2 + '\n')
+        ouFile2.write(D2[k2] + '\n')
 
 inFile.close()
+ouFile1.close()
+ouFile2.close()
+ouFile3.close()
 
 
