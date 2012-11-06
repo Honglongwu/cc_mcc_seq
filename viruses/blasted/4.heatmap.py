@@ -1,7 +1,6 @@
 from PyPlot.PyPlotClass import *
 import sys
-
-MAXTICKS = 99
+import math
 def gene_heatmap(sampleNameList, ouF, figsize=0, rowList=[]):
     D = dict()
     for i,inF in enumerate(sampleNameList):
@@ -10,10 +9,7 @@ def gene_heatmap(sampleNameList, ouF, figsize=0, rowList=[]):
             line = line.strip()
             fields =line.split('\t')
             D.setdefault(fields[0],[0]*16)
-            if int(fields[1]) < MAXTICKS:
-                D[fields[0]][i] = int(fields[1])
-            else:
-                D[fields[0]][i] = MAXTICKS
+            D[fields[0]][i] = int(math.log(int(fields[1])+1,2))
 
         inFile.close()
 
@@ -29,7 +25,7 @@ def gene_heatmap(sampleNameList, ouF, figsize=0, rowList=[]):
     print(LD)
     
     pp=PyPlot(ouF)
-    pp.heatmap(LD,col=False,xLabel=sampleNameList,yLabel=geneList,xLabelVertical=True,grid=True,figsize=figsize)
+    pp.heatmap(LD,col=False,xLabel=sampleNameList,yLabel=geneList,xLabelVertical=True,grid=True,figsize=figsize,colorTickets=True)
 
 gene_heatmap(['ICC4A','ICC4B','ICC5A','ICC5B','ICC9A','ICC9B','ICC10A','ICC10B','CHC5A','CHC5B','CHC6A','CHC6B','CHC7A','CHC7B','CHC10A','CHC10B'],'viruses.heatmap.pdf',figsize=(8,12))
 
