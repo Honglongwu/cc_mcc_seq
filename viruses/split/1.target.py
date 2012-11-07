@@ -25,37 +25,40 @@ for line in inFile:
 inFile.close()
 
 
-
-inFile = open(sys.argv[1])
-for line in inFile:
-    line = line.strip()
-    fields = line.split('\t')
-    if fields[0].find('chr') == 0:
-        if int(fields[1]) - interval >= 0:
-            start = int(fields[1]) - interval
-        else:
-            start = 0
-        if int(fields[1]) + interval <= len(D1[fields[0]]):
-            end = int(fields[1]) + interval
-        else:
-            end = len(D1[fields[0]])
-        ouFile.write('>' + sys.argv[1].split('.')[0] + 
-                ':' + fields[0] + ':' + str(start) + ':' + str(end) + '\n')
-        ouFile.write(D1[fields[0]][start:end+1]+'\n')
-    if fields[0].find('NC') == 0:
-        s = min(int(fields[4]), int(fields[5]))
-        e = max(int(fields[4]), int(fields[5]))
-        if s - interval >= 0:
-            start = s - interval
-        else:
-            start = 0
-        if e + interval <= len(D2[fields[0]]):
-            end = e + interval
-        else:
-            end = len(D2[fields[0]])
-        ouFile.write('>' + sys.argv[1].split('.')[0] + 
-                ':' + fields[0] + ':' + str(start) + ':' + str(end) + '\n')
-        ouFile.write(D2[fields[0]][start:end+1]+'\n')
+files = ['ICC4A','ICC4B','ICC5A','ICC5B','ICC9A','ICC9B','ICC10A','ICC10B',
+        'CHC5A','CHC5B','CHC6A','CHC6B','CHC7A','CHC7B','CHC10A','CHC10B',]
+for f in files:
+    inFile = open(f + '.unmapped.sam.mapped.fa.fa.blasted.top.seq2.format')
+    for line in inFile:
+        line = line.strip()
+        fields = line.split('\t')
+        if fields[0].find('chr') == 0:
+            if int(fields[1]) - interval >= 0:
+                start = int(fields[1]) - interval
+            else:
+                start = 0
+            if int(fields[1]) + interval <= len(D1[fields[0]]):
+                end = int(fields[1]) + interval
+            else:
+                end = len(D1[fields[0]])
+            ouFile.write('>' + f + 
+                    ':' + fields[0] + ':' + str(start) + ':' + str(end) + '\n')
+            ouFile.write(D1[fields[0]][start:end+1]+'\n')
+        if fields[0].find('NC') == 0:
+            s = min(int(fields[4]), int(fields[5]))
+            e = max(int(fields[4]), int(fields[5]))
+            if s - interval >= 0:
+                start = s - interval
+            else:
+                start = 0
+            if e + interval <= len(D2[fields[0]]):
+                end = e + interval
+            else:
+                end = len(D2[fields[0]])
+            ouFile.write('>' + f + 
+                    ':' + fields[0] + ':' + str(start) + ':' + str(end) + '\n')
+            ouFile.write(D2[fields[0]][start:end+1]+'\n')
+    inFile.close()
 
 inFile.close()
 ouFile.close()

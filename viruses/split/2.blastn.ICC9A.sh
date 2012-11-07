@@ -1,5 +1,5 @@
-cd /netshare1/home1/szzhongxin/proj1/hansun/viruses/blast
-db=/netshare1/home1/szzhongxin/proj1/hansun/Viruses/bwa/hg19.viruses.fasta
+cd /netshare1/home1/szzhongxin/proj1/hansun/viruses/split
+db=/netshare1/home1/szzhongxin/proj1/hansun/viruses/split/human.viruses.target.fa
 
 query=ICC9A.unmapped.sam.unmapped.fa.fa
 out=${query}.blasted
