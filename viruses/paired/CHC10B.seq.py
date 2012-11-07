@@ -41,12 +41,14 @@ for line in inFile:
             for item in D[k]:  
                 ouFile.write(item + '\n')
         elif k in D2:
-            #ouFile2.write(k + '\n')
-            #for item in D[k]:  
-            #    ouFile2.write(item + '\t' + line + '\n')
-            ouFile2.write(k +'\t'+line+ '\n')
+            ouFile2.write(k + '\n')
+            for item in D[k]:  
+                ouFile2.write(item + '\t' + line + '\n')
+            #ouFile2.write(k +'\t'+line+ '\n')
+            ouFile2.write(k + '\n')
             for item in D2[k]:  
-                ouFile2.write(item + '\n')
+                if item.split('\t')[5]!='*':
+                    ouFile2.write(item + '\n')
     else:
         ouFile3.write(k.strip('>') + '\n')
 
