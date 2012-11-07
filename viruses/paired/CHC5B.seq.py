@@ -1,7 +1,7 @@
 import sys
-inF = 'CHC10B.unmapped.fa'
-inF2 = 'CHC10B.unmapped.sam.mapped.fa.fa.blasted.top'
-inF3 = '../CHC10B.unmapped'
+inF = 'CHC5B.unmapped.fa'
+inF2 = 'CHC5B.unmapped.sam.mapped.fa.fa.blasted.top'
+inF3 = '../CHC5B.unmapped'
 
 inFile = open(inF)
 D = dict()
