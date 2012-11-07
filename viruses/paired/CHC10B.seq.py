@@ -9,7 +9,8 @@ while True:
     head = inFile.readline().strip()
     seq = inFile.readline().strip()
     if head:
-        D[head] = seq
+        D.setdefault(head,[])
+        D[head].append(seq)
     else:
         break
 inFile.close()
@@ -19,7 +20,9 @@ D2 = dict()
 for line in inFile:
     line = line.strip()
     fields = line.split('\t')
-    D2['>' + fields[0]]=line
+    k = '>'+fields[0]
+    D2.setdefault(k, [])
+    D2[k].append(line)
 inFile.close()
 
 inFile = open(inF2)
