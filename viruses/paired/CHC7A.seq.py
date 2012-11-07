@@ -46,10 +46,10 @@ for line in inFile:
 
     if k2 in D:
         ouFile.write(k2 + '\n')
-        ouFile.write(D[k2] + '\t' + line+ '\n')
+        ouFile.write(D[k2] + '\n')
     else:
         ouFile2.write(k + '\n')
-        ouFile2.write(D[k] + '\n')
+        ouFile2.write(D[k] + '\t' + line + '\n')
         ouFile2.write(k2 + '\n')
         ouFile2.write(D2[k2] + '\n')
 
