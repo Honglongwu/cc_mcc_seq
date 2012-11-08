@@ -14,7 +14,7 @@ inFile.close()
 
 inFile = open(sys.argv[1])
 ouFile = open(sys.argv[1].split('.txt')[0] + '.fa', 'w')
-D2 = dict()
+#D2 = dict()
 if sys.argv[1].find('ICC4A')==0:
     for line in inFile:
         line = line.strip()
@@ -57,9 +57,9 @@ else:
                     elif fs[7] == '2':
                         seq2 = ':'.join(fs[0:7]+['1']+fs[8:])
                     if seq1 in D and seq2 in D:
-                        ouFile.write(seq1 + '\n')
+                        ouFile.write('>' + seq1 + '\n')
                         ouFile.write(D[seq1][0] + '\n')
-                        ouFile.write(seq2 + '\n')
+                        ouFile.write('>' + seq2 + '\n')
                         ouFile.write(D[seq2][0] + '\n')
                 elif sys.argv[1].split('.')[0] in ['CHC5A','CHC6A','CHC7A','ICC5A',]:
                     if fs[7] == '1':
@@ -68,22 +68,22 @@ else:
                         seq2 = ':'.join(fs[0:7]+['1']+fs[8:10]+['#1'])
 
                     if seq1 in D and seq2 in D:
-                        ouFile.write(seq1 + '\n')
+                        ouFile.write('>' + seq1 + '\n')
                         ouFile.write(D[seq1][0] + '\n')
-                        ouFile.write(seq2 + '\n')
+                        ouFile.write('>' + seq2 + '\n')
                         ouFile.write(D[seq2][0] + '\n')
 
                 elif sys.argv[1].split('.')[0].find('B') != -1:
                     seq =seq1
-                    D2.setdefault(seq, 0)
-                    D2[seq] += 1
-                    seq1 = seq + ':' + str(D2[seq])
-                    seq2 = seq + ':' + str(D2[seq])
+                    #D2.setdefault(seq, 0)
+                    #D2[seq] += 1
+                    seq1 = seq + ':1'
+                    seq2 = seq + ':2'
 
                     if seq in D :
-                        ouFile.write(seq1 + '\n')
+                        ouFile.write('>' + seq1 + '\n')
                         ouFile.write(D[seq][0] + '\n')
-                        ouFile.write(seq2 + '\n')
+                        ouFile.write('>' + seq2 + '\n')
                         ouFile.write(D[seq][1] + '\n')
 
 
