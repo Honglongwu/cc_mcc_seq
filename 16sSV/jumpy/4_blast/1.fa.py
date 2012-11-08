@@ -63,9 +63,9 @@ else:
                         ouFile.write(D[seq2][0] + '\n')
                 elif sys.argv[1].split('.')[0] in ['CHC5A','CHC6A','CHC7A','ICC5A',]:
                     if fs[7] == '1':
-                        seq2 = ':'.join(fs[0:7]+['2']+fs[8:10]+'#2')
+                        seq2 = ':'.join(fs[0:7]+['2']+fs[8:10]+['#2'])
                     elif fs[7] == '2':
-                        seq2 = ':'.join(fs[0:7]+['1']+fs[8:10]+'#1')
+                        seq2 = ':'.join(fs[0:7]+['1']+fs[8:10]+['#1'])
 
                     if seq1 in D and seq2 in D:
                         ouFile.write(seq1 + '\n')
