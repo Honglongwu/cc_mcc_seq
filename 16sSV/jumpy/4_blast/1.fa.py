@@ -14,6 +14,7 @@ inFile.close()
 
 inFile = open(sys.argv[1])
 ouFile = open(sys.argv[1].split('.txt')[0] + '.fa', 'w')
+ouFile2 = open(sys.argv[1].split('.txt')[0] + '.2.fa', 'w')
 #D2 = dict()
 if sys.argv[1].find('ICC4A')==0:
     for line in inFile:
@@ -81,10 +82,14 @@ else:
                     seq2 = seq + ':2'
 
                     if seq in D :
-                        ouFile.write('>' + seq1 + '\n')
-                        ouFile.write(D[seq][0] + '\n')
-                        ouFile.write('>' + seq2 + '\n')
-                        ouFile.write(D[seq][1] + '\n')
+                        if len(D[seq]) > 1:
+                            ouFile.write('>' + seq1 + '\n')
+                            ouFile.write(D[seq][0] + '\n')
+                            ouFile.write('>' + seq2 + '\n')
+                            ouFile.write(D[seq][1] + '\n')
+                        else:
+                            ouFile2.write('>' + seq1 + '\n')
+                            ouFile2.write(D[seq][0] + '\n')
 
 
             #elif fields[0].find('_') != -1:
@@ -99,3 +104,5 @@ else:
 
 
 inFile.close()
+ouFile.close()
+ouFile2.close()
