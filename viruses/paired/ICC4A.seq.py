@@ -47,9 +47,9 @@ for line in inFile:
     if k.find(':') != -1:
         fs = k.split(':')
         if fs[7] == '1':
-            k2 = ':'.join(fs[0:7]+['2']+fs[8:10]+'#2')
+            k2 = ':'.join(fs[0:7]+['2']+fs[8:10]+['#2'])
         elif fs[7] == '2':
-            k2 = ':'.join(fs[0:7]+['1']+fs[8:10]+'#1')
+            k2 = ':'.join(fs[0:7]+['1']+fs[8:10]+['#1'])
 
 
     if k2 in D:

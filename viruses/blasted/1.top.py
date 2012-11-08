@@ -3,12 +3,20 @@ D = dict()
 inFile = open(sys.argv[1])
 ouFile = open(sys.argv[1]+'.top','w')
 ouFile2 = open(sys.argv[1]+'.top2','w')
-for line in inFile:
-    line = line.strip()
-    fields = line.split('\t')
-    if float(fields[2])>95 and float(fields[3])>90:
-        D.setdefault(fields[0], [])
-        D[fields[0]].append(line)
+if sys.argv[1].find('ICC4A')==0:
+     for line in inFile:
+        line = line.strip()
+        fields = line.split('\t')
+        if float(fields[2])>95 and float(fields[3])>65:
+            D.setdefault(fields[0], [])
+            D[fields[0]].append(line)
+else:
+    for line in inFile:
+        line = line.strip()
+        fields = line.split('\t')
+        if float(fields[2])>95 and float(fields[3])>90:
+            D.setdefault(fields[0], [])
+            D[fields[0]].append(line)
 inFile.close()
 
 d = D.items()
