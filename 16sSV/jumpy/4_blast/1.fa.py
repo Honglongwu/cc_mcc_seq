@@ -16,7 +16,32 @@ inFile = open(sys.argv[1])
 ouFile = open(sys.argv[1].split('.txt')[0] + '.fa', 'w')
 D2 = dict()
 if sys.argv[1].find('ICC4A')==0:
-    pass
+    for line in inFile:
+        line = line.strip()
+        fields = line.split()
+        if fields:
+            if fields[0].find('HWI') != -1 : 
+                seq1 = fields[0]
+                if fields[0].find('_')!=-1:
+                    fs = seq1.split('_')
+                    if fs[7] == '1':
+                        seq2 = '_'.join(fs[0:8]+['2'])
+                    elif fs[7] == '2':
+                        seq2 = '_'.join(fs[0:8]+['1'])
+                if fields[0].find(':') != -1: 
+                    fs = seq1.split(':')
+                    if fs[7] == '1':
+                        seq2 = ':'.join(fs[0:7]+['2']+fs[8:10]+['#2'])
+                    elif fs[7] == '2':
+                        seq2 = ':'.join(fs[0:7]+['1']+fs[8:10]+['#1'])
+
+                if seq1 in D and seq2 in D:
+                    ouFile.write('>'+seq1 + '\n')
+                    ouFile.write(D[seq1][0] + '\n')
+                    ouFile.write('>'+seq2 + '\n')
+                    ouFile.write(D[seq2][0] + '\n')
+
+
 
 else:
     for line in inFile:
