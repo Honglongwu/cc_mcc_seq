@@ -2,6 +2,10 @@ import sys
 D = dict()
 inFile = open(sys.argv[1])
 ouFile = open(sys.argv[1]+'.unique', 'w')
+
+for n in range(95):
+    line = inFile.readline()
+
 for line in inFile:
     line = line.strip()
     fields = line.split('\t')
