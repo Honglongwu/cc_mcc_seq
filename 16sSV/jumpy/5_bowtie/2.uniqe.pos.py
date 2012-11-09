@@ -10,7 +10,7 @@ for line in inFile:
 inFile.close()
 
 for k in D:
-    if len(D[k]) == 1:
+    if len(D[k]) == 1 and D[k][0].split('\t')[1] != '4':
         ouFile.write(D[k][0] + '\n')
 
 inFile.close()
