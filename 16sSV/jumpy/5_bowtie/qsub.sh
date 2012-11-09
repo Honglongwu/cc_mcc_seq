@@ -1,4 +1,4 @@
-qsub CHC10A.bowtie.sh -l nodes=n4  -q high 
+#qsub CHC10A.bowtie.sh -l nodes=n4  -q high 
 qsub CHC10B.bowtie.sh -l nodes=n5  -q high 
 qsub CHC5A.bowtie.sh -l nodes=n6  -q high 
 qsub CHC5B.bowtie.sh -l nodes=n7  -q high 
