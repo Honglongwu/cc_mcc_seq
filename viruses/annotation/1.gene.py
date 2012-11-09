@@ -17,14 +17,13 @@ for line in inFile:
     fields = line.split()
     if fields:
         if fields[0].find('chr') == 0:
-            ouFile.write(line + '\t')
+            gs = []
             pos = int(fields[1])
             p1 = pos - interval
             p2 = pos + interval
             for item in G:
                 if item[1]< p1 <item[2] or item[1] < p2 < item[2]:
-                    #ouFile.write(line + '\t' + item[3] + '\n')
-                    ouFile.write(item[3] + '\t')
-            ouFile.write('\n')
+                    gs.append(item[3])
+            ouFile.write(line + '\t' + '\t'.join(set(gs)) + '\n')
 inFile.close()
 ouFile.close()
