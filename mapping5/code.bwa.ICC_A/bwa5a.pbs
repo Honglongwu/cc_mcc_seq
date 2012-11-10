@@ -1,28 +1,28 @@
 #!/bin/bash
 
-cd  /netshare1/home1/szzhongxin/proj1/hansun/mapping5/4A
+cd  /netshare1/home1/szzhongxin/proj1/hansun/mapping5/5A
 
 bwa aln -I -t 6 \
-/netshare1/home1/szzhongxin/proj1/hansun/Viruses/bwa/hg19viruses \
-/netshare1/home1/szzhongxin/proj1/fudan/9A/9A_0107_w2q20m35_N_1.fq \
->4A.sai
+/netshare1/home1/people/hansun/GATK/bwa/hg19 \
+/netshare1/home1/szzhongxin/proj1/fudan5/5A/read_q20w5m35.1.fq \
+>5A.1.sai
 
 bwa aln -I -t 6 \
-/netshare1/home1/szzhongxin/proj1/hansun/Viruses/bwa/hg19viruses \
-/netshare1/home1/szzhongxin/proj1/fudan/9A/9A_0107_w2q20m35_N_2.fq \
->4A.sai
+/netshare1/home1/people/hansun/GATK/bwa/hg19 \
+/netshare1/home1/szzhongxin/proj1/fudan5/5A/read_q20w5m35.2.fq \
+>5A.2.sai
 
 
 bwa sampe  \
-/netshare1/home1/szzhongxin/proj1/hansun/Viruses/bwa/hg19viruses \
-4A.sai \
-4A.sai \
-/netshare1/home1/szzhongxin/proj1/fudan/9A/9A_0107_w2q20m35_N_1.fq \
-/netshare1/home1/szzhongxin/proj1/fudan/9A/9A_0107_w2q20m35_N_2.fq \
--r "@RG\tID:4a\tSM:4a\tLB:4a\tPL:illumina\tPU:barcode" | \
-samtools view -bS -o 4A.bam -
+/netshare1/home1/people/hansun/GATK/bwa/hg19 \
+5A.1.sai \
+5A.2.sai \
+/netshare1/home1/szzhongxin/proj1/fudan5/5A/read_q20w5m35.1.fq \
+/netshare1/home1/szzhongxin/proj1/fudan5/5A/read_q20w5m35.2.fq \
+-r "@RG\tID:5a\tSM:5a\tLB:5a\tPL:illumina\tPU:barcode" | \
+samtools view -bS -o 5A.bam -
 
-samtools  sort 4A.bam 4A.sorted
-
-mv 4A.bam 4A.bam
-samtools index 4A.bam
+samtools  sort 5A.bam 5A.sorted
+mv 5A.sorted.bam 5A.bam
+samtools index 5A.bam
+samtools  flagstat 5A.bam >5A.stat

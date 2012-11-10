@@ -9,7 +9,7 @@ bwa aln -I -t 6 \
 
 bwa aln -I -t 6 \
 /netshare1/home1/people/hansun/GATK/bwa/hg19 \
-/netshare1/home1/szzhongxin/proj1/fudan/10A/read_q20w5m35.2.fq \
+/netshare1/home1/szzhongxin/proj1/fudan5/10A/read_q20w5m35.2.fq \
 >10A.2.sai
 
 
@@ -25,5 +25,4 @@ samtools view -bS -o 10A.bam -
 samtools  sort 10A.bam 10A.sorted
 mv 10A.sorted.bam 10A.bam
 samtools index 10A.bam
-
 samtools  flagstat 10A.bam >10A.stat

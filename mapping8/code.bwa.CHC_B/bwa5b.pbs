@@ -1,43 +1,28 @@
 #!/bin/bash
 
-read1fq=M5B_AGTCAA_L003_w4q20m35_N_1.fq
-read2fq=M5B_AGTCAA_L003_w4q20m35_N_2.fq
-read1sai=M5B_AGTCAA_L003_w4q20m35_N_1.sai
-read2sai=M5B_AGTCAA_L003_w4q20m35_N_2.sai
-readsam=5B.AGTCAA_L003_w4q20m35_N.sam
-
-bam=5B.AGTCAA_L003_w4q20m35_N.bam
-bamsorted=5B.AGTCAA_L003_w4q20m35_N.sorted
-bamsortedbam=5B.AGTCAA_L003_w4q20m35_N.sorted.bam
-BAM=5B.bam
-
-
-
 cd  /netshare1/home1/szzhongxin/proj1/hansun/mapping8/5B
 
 bwa aln -I -t 6 \
-/netshare1/home1/szzhongxin/proj1/hansun/Viruses/bwa/hg19viruses \
-/netshare1/home1/szzhongxin/proj1/fudan4/5B/$read1fq \
->$read1sai
+/netshare1/home1/people/hansun/GATK/bwa/hg19 \
+/netshare1/home1/szzhongxin/proj1/fudan8/5B/read_q20w5m35.1.fq \
+>5B.1.sai
 
 bwa aln -I -t 6 \
-/netshare1/home1/szzhongxin/proj1/hansun/Viruses/bwa/hg19viruses \
-/netshare1/home1/szzhongxin/proj1/fudan4/5B/$read2fq \
->$read2sai
+/netshare1/home1/people/hansun/GATK/bwa/hg19 \
+/netshare1/home1/szzhongxin/proj1/fudan8/5B/read_q20w5m35.2.fq \
+>5B.2.sai
 
 
 bwa sampe  \
-/netshare1/home1/szzhongxin/proj1/hansun/Viruses/bwa/hg19viruses \
-$read1sai \
-$read2sai \
-/netshare1/home1/szzhongxin/proj1/fudan4/5B/$read1fq \
-/netshare1/home1/szzhongxin/proj1/fudan4/5B/$read2fq \
+/netshare1/home1/people/hansun/GATK/bwa/hg19 \
+5B.1.sai \
+5B.2.sai \
+/netshare1/home1/szzhongxin/proj1/fudan8/5B/read_q20w5m35.1.fq \
+/netshare1/home1/szzhongxin/proj1/fudan8/5B/read_q20w5m35.2.fq \
 -r "@RG\tID:m5b\tSM:m5b\tLB:m5b\tPL:illumina\tPU:barcode" | \
-samtools view -bS -o $bam -
+samtools view -bS -o 5B.bam -
 
-samtools  sort $bam $bamsorted
-
-mv $bamsortedbam $BAM
-samtools index $BAM
-
-
+samtools  sort 5B.bam 5B.sorted
+mv 5B.sorted.bam 5B.bam
+samtools index 5B.bam
+samtools  flagstat 5B.bam >5B.stat
