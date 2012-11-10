@@ -1,7 +1,28 @@
 #!/bin/bash
 
-cd /netshare1/home1/szzhongxin/proj1/hansun/mapping5/4A
+cd  /netshare1/home1/szzhongxin/proj1/hansun/mapping5/4A
 
-samtools merge 4A.bam  4A.hiseq_20110602_lane8_w4q20m35_N.sorted.bam 4A.hiseq_20110824_lane7_w4q20m35_N.sorted.bam 4A.hiseq_20110824_lane8_w4q20m35_N.sorted.bam
+bwa aln -I -t 6 \
+/netshare1/home1/szzhongxin/proj1/hansun/Viruses/bwa/hg19viruses \
+/netshare1/home1/szzhongxin/proj1/fudan/9A/9A_0107_w2q20m35_N_1.fq \
+>4A.sai
 
+bwa aln -I -t 6 \
+/netshare1/home1/szzhongxin/proj1/hansun/Viruses/bwa/hg19viruses \
+/netshare1/home1/szzhongxin/proj1/fudan/9A/9A_0107_w2q20m35_N_2.fq \
+>4A.sai
+
+
+bwa sampe  \
+/netshare1/home1/szzhongxin/proj1/hansun/Viruses/bwa/hg19viruses \
+4A.sai \
+4A.sai \
+/netshare1/home1/szzhongxin/proj1/fudan/9A/9A_0107_w2q20m35_N_1.fq \
+/netshare1/home1/szzhongxin/proj1/fudan/9A/9A_0107_w2q20m35_N_2.fq \
+-r "@RG\tID:4a\tSM:4a\tLB:4a\tPL:illumina\tPU:barcode" | \
+samtools view -bS -o 4A.bam -
+
+samtools  sort 4A.bam 4A.sorted
+
+mv 4A.bam 4A.bam
 samtools index 4A.bam
