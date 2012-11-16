@@ -16,5 +16,5 @@ def csv2tsv(iFile):
     ouFile1.close()
     ouFile2.close()
 
-csv2tsv('sum_snv16s.exome_summary.csv')
-csv2tsv('sum_snv16s.genome_summary.csv')
+csv2tsv('sum_snv16sExome.exome_summary.csv')
+csv2tsv('sum_snv16sExome.genome_summary.csv')
