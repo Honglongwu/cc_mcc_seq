@@ -22,10 +22,16 @@ CHC6B=/netshare1/home1/szzhongxin/proj1/hansun/mapping8/6B/6B.bam
 CHC7B=/netshare1/home1/szzhongxin/proj1/hansun/mapping8/7B/7B.bam
 CHC10B=/netshare1/home1/szzhongxin/proj1/hansun/mapping8/10B/10B.bam
 
-java -jar $varscan copynumber  
+chr=chr21
+sample=CHC5
 
-samtools mpileup -q 1 -f $hg19 $CHC5B $CHC5A | \
-java -jar $varscan copynumber varScan.CHC5 --mpileup 1
 
-java -jar $varscan copyCaller varScan.CHC5.copynumber --output-file varScan.CHC5.copynumber.called
+#samtools mpileup -q 1 -f $hg19 -r $chr ${sample}B ${sample}A | \
+#java -jar $varscan copynumber varScan.${sample}.${chr} --mpileup 1
+
+echo $`${sample}B`
+
+#java -jar $varscan copyCaller varScan.${sample}.${chr}.copynumber --output-file varScan.${sample}.${chr}.copynumber.called
+
+
 
