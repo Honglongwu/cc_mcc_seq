@@ -1,3 +1,4 @@
+cd /netshare1/home1/szzhongxin/proj1/hansun/16sCNV
 varscan=/netshare1/home1/people/hansun/MySoft/VarScan/VarScan.v2.3.3.jar
 hg19=/netshare1/home1/people/hansun/GATK/bundle/ucsc.hg19.fasta
 
@@ -22,12 +23,12 @@ CHC6B=/netshare1/home1/szzhongxin/proj1/hansun/mapping8/6B/6B.bam
 CHC7B=/netshare1/home1/szzhongxin/proj1/hansun/mapping8/7B/7B.bam
 CHC10B=/netshare1/home1/szzhongxin/proj1/hansun/mapping8/10B/10B.bam
 
-chr=chr21
-sample=CHC5
+chr=chr11
+sample=CHC6
 
 
 
-samtools mpileup -q 1 -f $hg19 -r $chr $CHC5B $CHC5A | \
+samtools mpileup -q 1 -f $hg19 -r $chr $CHC6B $CHC6A | \
 java -jar $varscan copynumber varScan.${sample}.${chr} --mpileup 1
 
 
