@@ -26,12 +26,12 @@ chr=chr21
 sample=CHC5
 
 
-#samtools mpileup -q 1 -f $hg19 -r $chr ${sample}B ${sample}A | \
-#java -jar $varscan copynumber varScan.${sample}.${chr} --mpileup 1
 
-echo $`${sample}B`
+samtools mpileup -q 1 -f $hg19 -r $chr $CHC5B $CHC5A | \
+java -jar $varscan copynumber varScan.${sample}.${chr} --mpileup 1
 
-#java -jar $varscan copyCaller varScan.${sample}.${chr}.copynumber --output-file varScan.${sample}.${chr}.copynumber.called
+
+java -jar $varscan copyCaller varScan.${sample}.${chr}.copynumber --output-file varScan.${sample}.${chr}.copynumber.called
 
 
 
