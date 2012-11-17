@@ -28,19 +28,9 @@ sample=CHC6
 
 
 
-#samtools mpileup -q 1 -f $hg19 -r $chr $CHC6B $CHC6A | \
-#java -jar $varscan copynumber varScan.${sample}.${chr} --mpileup 1
+samtools mpileup -q 1 -f $hg19 -r $chr $CHC6B $CHC6A | \
+java -jar $varscan copynumber - varScan.${sample}.${chr} --mpileup 1
 
 
-#java -jar $varscan copyCaller varScan.${sample}.${chr}.copynumber --output-file varScan.${sample}.${chr}.copynumber.called
-
-
-samtools mpileup -q 1 -f $hg19 $CHC6B $CHC6A | \
-java -jar $varscan copynumber varScan.${sample} --mpileup 1
-
-
-java -jar $varscan copyCaller varScan.${sample}.copynumber --output-file varScan.${sample}.copynumber.called
-
-
-
+java -jar $varscan copyCaller varScan.${sample}.${chr}.copynumber --output-file varScan.${sample}.${chr}.copynumber.called
 
