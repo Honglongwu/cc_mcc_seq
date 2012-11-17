@@ -4,4 +4,5 @@ db=/netshare1/home1/people/hansun/Data/GenomeSeq/Human/ucsc.hg19.fasta
 query=CHC10A.jmp.sam.unique.paired.fa
 out=${query}.blasted
 
-blastn  -db $db  -query $query -out $out -outfmt 6  -max_target_seqs 20    
+#blastn  -db $db  -query $query -out $out -outfmt 6  -max_target_seqs 20    
+blat $db $query -ooc=11.ooc -out=blast8
