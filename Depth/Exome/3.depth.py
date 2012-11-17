@@ -42,12 +42,12 @@ for line in inFile:
     fields = line.split('\t')
     row += 1
     tmp = []
-    if row % 2 == 1:
+    if row % 4 == 1:
         for i in range(-16,-8):
             tmp.append(float(fields[i]))
             tmp.append(float(fields[i+8]))
         depth.append(tmp)
-    else:
+    if row % 4 == 2:
         for i in range(-16,-8):
             tmp.append(float(fields[i]))
             tmp.append(float(fields[i+8]))

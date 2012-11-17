@@ -43,12 +43,12 @@ for line in inFile:
     fields = line.split('\t')
     row += 1
     tmp = []
-    if row % 4 == 1:
+    if row % 4 == 3:
         for i in range(-16,-8):
             tmp.append(float(fields[i]))
             tmp.append(float(fields[i+8]))
         depth.append(tmp)
-    if row % 4 == 2:
+    if row % 4 == 0:
         for i in range(-16,-8):
             tmp.append(float(fields[i]))
             tmp.append(float(fields[i+8]))
@@ -86,6 +86,6 @@ def plot(xList,yTitle,ouFile):
     plt.grid(True)
     plt.savefig(ouFile)
 
-plot(average,'Average Depth (covered sites)','1.depth.cover.genome.pdf')
-plot(average_full,'Average Depth (total sites)','1.depth.full.genome.pdf')
+plot(average,'Average Depth (covered sites)','1.depth.cover.filter.genome.pdf')
+plot(average_full,'Average Depth (total sites)','1.depth.full.filter.genome.pdf')
 
