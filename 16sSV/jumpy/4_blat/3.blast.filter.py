@@ -1,8 +1,6 @@
 import sys
-import re
 
 
-hits = 2
 chrs = ['chr1','chr2','chr3','chr4','chr5','chr6','chr7','chr8','chr9','chr10',
         'chr11','chr12','chr13','chr14','chr15','chr16','chr17',
         'chr18','chr19','chr20','chr21','chr22','chrX','chrY','chrM']
@@ -14,7 +12,7 @@ if sys.argv[1].find('ICC4A') != -1:
 
 D = {}
 def blat():
-    inFile = open(sys.argv[1] + '.blated')
+    inFile = open(sys.argv[1])
     for line in inFile:
         line = line.strip()
         fields = line.split('\t')
@@ -27,7 +25,8 @@ def blat():
 blat()
 
 
-inFile = open(sys.argv[1])
+inFile = open(sys.argv[1].split('.blated')[0])
+ouFile = open(sys.argv[1] + '.unique', 'w')
 while True:
     line1 = inFile.readline().strip()
     line2 = inFile.readline().strip()
@@ -43,10 +42,10 @@ while True:
                 ch1 = D[k1][0].split('\t')[1]
                 ch2 = D[k2][0].split('\t')[1]
                 if ch1 in chrs and ch2 in chrs and ch1 != ch2:
-                    print(D[k1][0])
-                    print(line2)
-                    print(D[k2][0])
-                    print(line4)
+                    ouFile.write(D[k1][0] + '\n')
+                    ouFile.write(line2 + '\n')
+                    ouFile.write(D[k2][0] + '\n')
+                    ouFile.write(line4 + '\n')
 
     else:
         break
@@ -54,4 +53,5 @@ while True:
 
 
 inFile.close()
+ouFile.close()
 
