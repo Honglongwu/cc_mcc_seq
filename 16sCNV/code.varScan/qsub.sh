@@ -1,5 +1,5 @@
 qsub varScan.chc6.chr10.sh -l nodes=n4 -q high 
-#qsub varScan.chc6.chr11.sh -l nodes=n5 -q high 
+qsub varScan.chc6.chr11.sh -l nodes=n5 -q high 
 qsub varScan.chc6.chr12.sh -l nodes=n6 -q high 
 qsub varScan.chc6.chr13.sh -l nodes=n7 -q high 
 qsub varScan.chc6.chr14.sh -l nodes=n9 -q high 
