@@ -12,13 +12,13 @@
 #qsub varScan.chc5.chr20.sh -l nodes=n16 -q high 
 #qsub varScan.chc5.chr21.sh -l nodes=n17 -q high 
 #qsub varScan.chc5.chr22.sh -l nodes=n19 -q high 
-#qsub varScan.chc5.chr2.sh -l nodes=n21 -q high 
-#qsub varScan.chc5.chr3.sh -l nodes=n22 -q high 
-qsub varScan.chc5.chr4.sh -l nodes=cu01  
-qsub varScan.chc5.chr5.sh -l nodes=cu02  
-qsub varScan.chc5.chr6.sh -l nodes=cu03 
-qsub varScan.chc5.chr7.sh -l nodes=cu04 
-qsub varScan.chc5.chr8.sh -l nodes=cu05 
-qsub varScan.chc5.chr9.sh -l nodes=cu06 
-qsub varScan.chc5.chrX.sh -l nodes=cu07 
-qsub varScan.chc5.chrY.sh -l nodes=cu08 
+qsub varScan.chc5.chr2.sh    
+qsub varScan.chc5.chr3.sh
+qsub varScan.chc5.chr4.sh   
+qsub varScan.chc5.chr5.sh   
+qsub varScan.chc5.chr6.sh  
+qsub varScan.chc5.chr7.sh 
+qsub varScan.chc5.chr8.sh 
+qsub varScan.chc5.chr9.sh  
+qsub varScan.chc5.chrX.sh  
+qsub varScan.chc5.chrY.sh  
