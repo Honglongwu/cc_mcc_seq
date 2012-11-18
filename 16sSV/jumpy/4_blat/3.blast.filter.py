@@ -14,15 +14,14 @@ if sys.argv[1].find('ICC4A') != -1:
 
 D = {}
 def blat():
-    #inFile = open(sys.argv[1] + '.blat')
-    inFile = open('test')
+    inFile = open(sys.argv[1] + '.blated')
     for line in inFile:
         line = line.strip()
         fields = line.split('\t')
-        if float(fields[2]) >= identity and float(fields[3]) >= size:
-            D.setdefault(fields[0], [])
-            D[fields[0]].append(line)
-
+        if len(fields) > 3:
+            if float(fields[2]) >= identity and float(fields[3]) >= size:
+                D.setdefault(fields[0], [])
+                D[fields[0]].append(line)
     inFile.close()
 
 blat()
@@ -41,10 +40,13 @@ while True:
 
         if k1 in D and k2 in D:
             if len(D[k1]) == 1 and len(D[k2]) == 1:
-                print(D[k1][0])
-                print(line2)
-                print(D[k2][0])
-                print(line4)
+                ch1 = D[k1][0].split('\t')[1]
+                ch2 = D[k2][0].split('\t')[1]
+                if ch1 in chrs and ch2 in chrs and ch1 != ch2:
+                    print(D[k1][0])
+                    print(line2)
+                    print(D[k2][0])
+                    print(line4)
 
     else:
         break
