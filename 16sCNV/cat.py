@@ -5,11 +5,13 @@ chrs = ['chr1','chr2','chr3','chr4','chr5','chr6','chr7','chr8','chr9','chr10',
                         'chr18','chr19','chr20','chr21','chr22','chrX','chrY']
 import sys
 
-ouFile = open('1.' + sys.argv[1] + '.copynumber.called', 'w')
+ouFile = open(sys.argv[1] + '.copynumber.called', 'w')
 
 for ch in chrs:
     inFile = open(sys.argv[1] + '.' + ch + '.copynumber.called')
-    inFile.readline()
+    line = inFile.readline()
+    if ch =='chr1':
+        ouFile.write(line)
     for line in inFile:
         ouFile.write(line)
     inFile.close()
