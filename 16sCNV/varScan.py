@@ -9,6 +9,7 @@ CNA.smoothed <- smooth.CNA(CNA.object)
 segs <- segment(CNA.smoothed, verbose=0, min.width=2)
 segs2 = segs$output
 write.table(segs2[,2:6], file="%s.DNAcopyed", row.names=F, col.names=F, quote=F, sep="\t")
+plot(segs, plot.type="w")
 
 '''%(sys.argv[1],sys.argv[1])
 
