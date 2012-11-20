@@ -70,7 +70,7 @@ samples = [['4A','mapping5'],['4B','mapping7'],['5A','mapping5'],['5B','mapping7
         ['5A','mapping6'],['5B','mapping8'],['6A','mapping6'],['6B','mapping8'],
         ['7A','mapping6'],['7B','mapping8'],['10A','mapping6'],['10B','mapping8']]
 
-samples = [['10A','mapping6'],['10B','mapping8']]
+samples = [['6A','mapping6'],['6B','mapping8']]
 
 
 for item in SNV:
