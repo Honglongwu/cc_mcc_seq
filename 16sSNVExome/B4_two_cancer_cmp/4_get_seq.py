@@ -22,8 +22,8 @@ def get_seq(chrom,pos1,pos2,ref,alt,inter=500) :
             print('warning:\t'+chrom+'\t'+str(pos1)+'\t'+str(pos2)+'\t'+ref+'\t'+alt)
             return None
 
-inFile=open('SNV.exome.somatic.nonsynonymous.geneLevel.ranksum_test.mutation')
-ouFile=open('SNV.exome.somatic.nonsynonymous.geneLevel.ranksum_test.mutation_seq','w')
+inFile=open('SNV.exome.somatic.nonsynonymous.geneLevel.ranksum_test.mutation.driver')
+ouFile=open('SNV.exome.somatic.nonsynonymous.geneLevel.ranksum_test.mutation.driver.seq','w')
 for line in inFile :
     line=line.strip()
     fields=line.split('\t')
