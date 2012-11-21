@@ -64,10 +64,13 @@ site.append(sum(np.array(site)[:,:]))
 depth = np.array(depth)
 site = np.array(site)
 
+print(site)
+print(sum(site))
+
 average=depth/site
-print(average)
+#print(average)
 average_full = [depth[i]/ch[i] for i in range(len(depth))]
-print(average_full)
+#print(average_full)
 
 import matplotlib
 matplotlib.use('Agg')
