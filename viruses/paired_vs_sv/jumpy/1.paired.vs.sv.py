@@ -1,5 +1,5 @@
 import sys
-ouFile = open('jumpy.paired.seq', 'w')
+ouFile = open('jumpy.split.seq', 'w')
 for inF in sys.argv[1:]:
     inFile = open(inF)
     for line in inFile:

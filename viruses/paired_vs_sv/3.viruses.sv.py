@@ -1,6 +1,6 @@
 interval = 100000
 inFile = open('viruses.paired.seq')
-ouFile = open('viruses.jumpy.seq', 'w')
+ouFile = open('viruses.duppy.seq', 'w')
 for line in inFile:
     line = line.strip()
     fields = line.split()
@@ -9,7 +9,7 @@ for line in inFile:
     pos = int(fields[2])
     ouFile.write(line + '\t')
 
-    inFile2 = open('jumpy.paired.seq')
+    inFile2 = open('duppy.paired.seq')
     for line in inFile2:
         line = line.strip()
         fields = line.split()

@@ -1,5 +1,5 @@
 import sys
-ouFile = open('duppy.split.seq', 'w')
+ouFile = open('delly.split.seq', 'w')
 for inF in sys.argv[1:]:
     inFile = open(inF)
     for line in inFile:
