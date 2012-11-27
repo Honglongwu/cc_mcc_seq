@@ -21,6 +21,7 @@ def get_seq(chrom,pos1,pos2,ref,alt,inter=500) :
         else :
             print('warning:\t'+chrom+'\t'+str(pos1)+'\t'+str(pos2)+'\t'+ref+'\t'+alt)
             return None
+'''
 
 inFile=open('SNV.exome.somatic.nonsynonymous.geneLevel.ranksum_test.mutation.driver')
 ouFile=open('SNV.exome.somatic.nonsynonymous.geneLevel.ranksum_test.mutation.driver.seq','w')
@@ -38,5 +39,38 @@ for line in inFile :
 inFile.close()
 ouFile.close()
 
+
+inFile=open('SNV.exome.somatic.nonsynonymous.geneLevel.ranksum_test.mutation')
+ouFile=open('SNV.exome.somatic.nonsynonymous.geneLevel.ranksum_test.mutation.seq','w')
+for line in inFile :
+    line=line.strip()
+    fields=line.split('\t')
+    chrom=fields[1]
+    pos1=int(fields[2])
+    pos2=int(fields[3])
+    ref=fields[4]
+    alt=fields[5]
+    seq=get_seq(chrom,pos1,pos2,ref,alt)
+    ouFile.write(line+'\t'+seq+'\n')
+
+inFile.close()
+ouFile.close()
+'''
+
+inFile=open('SNV.exome.somatic.nonsynonymous.geneLevel.recurrent.mutation')
+ouFile=open('SNV.exome.somatic.nonsynonymous.geneLevel.recurrent.mutation.seq','w')
+for line in inFile :
+    line=line.strip()
+    fields=line.split('\t')
+    chrom=fields[1]
+    pos1=int(fields[2])
+    pos2=int(fields[3])
+    ref=fields[4]
+    alt=fields[5]
+    seq=get_seq(chrom,pos1,pos2,ref,alt)
+    ouFile.write(line+'\t'+seq+'\n')
+
+inFile.close()
+ouFile.close()
 
 
