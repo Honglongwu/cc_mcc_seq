@@ -1,9 +1,9 @@
-inFile = open('SNV.genome.somatic.UTR.geneLevel')
-ouFile = open('SNV.genome.somatic.UTR.geneLevel.recurrent', 'w')
+inFile = open('SNV.genome.somatic.ncRNA.geneLevel.ranksum_test.mc')
+ouFile = open('SNV.genome.somatic.ncRNA.geneLevel.recurrent', 'w')
 for line in inFile:
     line = line.strip()
     fields = line.split('\t')
-    if sum([int(x) for x in fields[1:]]) >1 :
+    if sum([int(x) for x in fields[2:]]) >1 :
         ouFile.write(line+'\n')
 inFile.close()
 ouFile.close()
@@ -15,7 +15,7 @@ def gene2mutation(iFile1,iFile2):
     for line in inFile :
         line=line.strip()
         fields=line.split('\t')
-        gene=fields[0]
+        gene=fields[1]
         inFile1=open(iFile2)
         for li in inFile1 :
             li=li.strip()
@@ -26,5 +26,5 @@ def gene2mutation(iFile1,iFile2):
     inFile.close()
     ouFile.close()
 
-gene2mutation('SNV.genome.somatic.UTR.geneLevel.recurrent','SNV.genome.somatic.UTR')
+gene2mutation('SNV.genome.somatic.ncRNA.geneLevel.recurrent','SNV.genome.somatic.ncRNA')
 
