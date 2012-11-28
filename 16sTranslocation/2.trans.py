@@ -32,7 +32,7 @@ else:
         fields = line.split('\t')
         if fields[0].find(':')!=-1:
             k = ':'.join(fields[0].split(':')[0:7])
-        elif fields[0].find('_')!=-1
+        elif fields[0].find('_')!=-1:
             k = '_'.join(fields[0].split('_')[0:7])
         D.setdefault(k,[])
         D[k].append(line)
