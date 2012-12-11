@@ -1,9 +1,9 @@
 import sys
 import random
-from PyStats.PyStatsClass import * 
+#from PyStats.PyStatsClass import * 
 
 
-interval = 50 
+interval = 100 
 
 def readRef():
     dict1={}
@@ -21,6 +21,7 @@ def readRef():
     return dict1
 
 dict1 = readRef()
+
 
 
 
@@ -72,7 +73,35 @@ def isRepeat(inF):
             else:
                 data_is_repeat += 1
 
+        else:
+            break
 
+    inFile.close()
+
+    #ps=PyStats()
+    ouFile.write(str(data_is_repeat)+'\t'+str(data_not_repeat)+'\n')
+    #a=ps.fisher_test([data_is_repeat,data_not_repeat,random_is_repeat,random_not_repeat])
+    #print(a)
+
+def randomRepeat(inF):
+    inFile = open(inF)
+    data_is_repeat = 0
+    data_not_repeat = 0
+    random_is_repeat = 0
+    random_not_repeat = 0
+
+    while True:
+        line1 = inFile.readline()
+        line2 = inFile.readline()
+        if line1:
+            fields1 = line1.split('\t')
+            fields2 = line2.split('\t')
+            ch1 = fields1[2]
+            ch2 = fields2[2]
+            pos1 = int(fields1[3])
+            pos2 = int(fields2[3])
+            flag1 = 0
+            flag2 = 0
 
             pos1_random = random.randint(0,len(dict1[ch1]))
             pos2_random = random.randint(0,len(dict1[ch2]))
@@ -104,22 +133,16 @@ def isRepeat(inF):
             else:
                 random_is_repeat += 1
 
-
         else:
             break
+    ouFile.write(str(random_is_repeat)+'\t'+str(random_not_repeat)+'\n')
 
     inFile.close()
 
-    ps=PyStats()
-    print([data_is_repeat,data_not_repeat,random_is_repeat,random_not_repeat])
-    a=ps.fisher_test([data_is_repeat,data_not_repeat,random_is_repeat,random_not_repeat])
-    print(a)
+ouFile = open(sys.argv[1]+'.bootstrap', 'w')
+isRepeat(sys.argv[1])
+for i in range(1000):
+    randomRepeat(sys.argv[1])
 
-
-isRepeat(sys.argv[1])
-isRepeat(sys.argv[1])
-isRepeat(sys.argv[1])
-isRepeat(sys.argv[1])
-isRepeat(sys.argv[1])
-
+ouFile.close()
 
