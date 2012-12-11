@@ -1,6 +1,6 @@
 import sys
 import random
-from PyStatsClass import * 
+from PyStats.PyStatsClass import * 
 
 
 interval = 100 
@@ -111,6 +111,7 @@ def isRepeat(inF):
     inFile.close()
 
     ps=PyStats()
+    print([data_is_repeat,data_not_repeat,random_is_repeat,random_not_repeat])
     a=ps.fisher_test([data_is_repeat,data_not_repeat,random_is_repeat,random_not_repeat])
     print(a)
 
