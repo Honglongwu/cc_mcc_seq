@@ -1,3 +1,4 @@
+### py 1.fisher.test.py *.paired 
 import sys
 import random
 #from PyStats.PyStatsClass import * 
