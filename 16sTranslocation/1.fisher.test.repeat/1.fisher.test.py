@@ -1,4 +1,8 @@
 import sys
+import random
+from PyStatsClass import * 
+
+
 interval = 100 
 
 def readRef():
@@ -22,8 +26,10 @@ dict1 = readRef()
 
 def isRepeat(inF):
     inFile = open(inF)
-    ouFile1 = open(inF+'.is.repeat','w')
-    ouFile2 = open(inF+'.not.repeat','w')
+    data_is_repeat = 0
+    data_not_repeat = 0
+    random_is_repeat = 0
+    random_not_repeat = 0
 
     while True:
         line1 = inFile.readline()
@@ -61,16 +67,58 @@ def isRepeat(inF):
                     flag2 = 1
                     break
             if flag1 == 0  and flag2 == 0:
-                ouFile2.write(line1)
-                ouFile2.write(line2)
+                data_not_repeat += 1
+               
             else:
-                ouFile1.write(line1)
-                ouFile1.write(line2)
+                data_is_repeat += 1
+
+
+
+            pos1_random = random.randint(0,len(dict1[ch1]))
+            pos2_random = random.randint(0,len(dict1[ch2]))
+            flag1 = 0
+            flag2 = 0
+            pos1_random_start = pos1_random-interval
+            pos1_random_end = pos1_random+interval
+            pos2_random_start = pos2_random - interval
+            pos2_random_end = pos2_random + interval
+            if pos1_random_start < 0:
+                pos1_random_start = 0
+            if pos2_random_start < 0:
+                pos2_random_start = 0
+            if pos1_random_end > len(dict1[ch1]):
+                pos1_random_end = len(dict1[ch1])
+            if pos2_random_end > len(dict1[ch2]):
+                pos2_random_end = len(dict1[ch2])
+
+            for i in range(pos1_random_start,pos1_random_end):
+                if dict1[ch1][i].islower():
+                    flag1 = 1
+                    break
+            for i in range(pos2_random_start,pos2_random_end):
+                if dict1[ch2][i].islower():
+                    flag2 = 1
+                    break
+            if flag1 == 0  and flag2 == 0:
+                random_not_repeat += 1
+            else:
+                random_is_repeat += 1
+
 
         else:
             break
 
     inFile.close()
-    ouFile1.close()
+
+    ps=PyStats()
+    a=ps.fisher_test([data_is_repeat,data_not_repeat,random_is_repeat,random_not_repeat])
+    print(a)
+
+
+isRepeat(sys.argv[1])
+isRepeat(sys.argv[1])
+isRepeat(sys.argv[1])
+isRepeat(sys.argv[1])
+isRepeat(sys.argv[1])
 
 
