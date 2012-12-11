@@ -10,8 +10,8 @@ ouFile = open(sys.argv[1] + '.copynumber.called', 'w')
 for ch in chrs:
     inFile = open(sys.argv[1] + '.' + ch + '.copynumber.called')
     line = inFile.readline()
-    if ch =='chr1':
-        ouFile.write(line)
+    #if ch =='chr1':
+    #    ouFile.write(line)
     for line in inFile:
         ouFile.write(line)
     inFile.close()

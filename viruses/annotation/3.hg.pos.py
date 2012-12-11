@@ -2,7 +2,7 @@
 import sys
 
 D = {}
-ouFile = open('viruse.pos.distribution','w')
+ouFile = open('viruse.hg.pos.distribution','w')
 for inF in sys.argv[1:]:
     inFile = open(inF)
     for line in inFile:
