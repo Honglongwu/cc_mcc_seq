@@ -3,7 +3,7 @@ import random
 from PyStats.PyStatsClass import * 
 
 
-interval = 100 
+interval = 50 
 
 def readRef():
     dict1={}
