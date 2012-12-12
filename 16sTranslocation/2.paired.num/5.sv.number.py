@@ -15,7 +15,6 @@ for key in D :
     print(key)
     print(D[key])
 
-D['ICC5B']=0
 
 Data=[[D['ICC4A'],D['ICC5A'],D['ICC9A'],D['ICC10A'],D['CHC5A'],D['CHC6A'],D['CHC7A'],D['CHC10A']],[D['ICC4B'],D['ICC5B'],D['ICC9B'],D['ICC10B'],D['CHC5B'],D['CHC6B'],D['CHC7B'],D['CHC10B']]]
 
