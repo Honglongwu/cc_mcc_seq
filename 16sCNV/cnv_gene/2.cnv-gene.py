@@ -7,9 +7,9 @@ upper = float(sys.argv[2])
 down = 1 / float(sys.argv[2])
 
 inFile = open(sys.argv[1])
-ouFile1 = open(sys.argv[1]+'_'+sys.argv[2]+'_upper2', 'w')
-ouFile2 = open(sys.argv[1]+'_'+sys.argv[2]+'_down2', 'w')
-ouFile3 = open(sys.argv[1]+'_'+sys.argv[2]+'_upped_down2', 'w')
+ouFile1 = open(sys.argv[1]+'_'+sys.argv[2]+'_upper', 'w')
+ouFile2 = open(sys.argv[1]+'_'+sys.argv[2]+'_down', 'w')
+ouFile3 = open(sys.argv[1]+'_'+sys.argv[2]+'_upped_down', 'w')
 
 chrs = ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6', 'chr7', 'chr8',
         'chr9', 'chr10', 'chr11', 'chr12', 'chr13', 'chr14', 'chr15', 'chr16',

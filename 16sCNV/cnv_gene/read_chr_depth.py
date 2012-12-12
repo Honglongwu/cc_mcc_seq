@@ -49,7 +49,7 @@ while True:
             Depth['CHC10B']['chr'+str(row)]=float(depths[15])/float(sites[15])
 
         elif row == 23:
-            Depth['ICC4A']['chr']=float(depths[0])/float(sites[0])
+            Depth['ICC4A']['chrX']=float(depths[0])/float(sites[0])
             Depth['ICC5A']['chrX']=float(depths[1])/float(sites[1])
             Depth['ICC9A']['chrX']=float(depths[2])/float(sites[2])
             Depth['ICC10A']['chrX']=float(depths[3])/float(sites[3])
