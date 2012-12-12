@@ -37,4 +37,4 @@ Data=[[D['ICC4A'],D['ICC4B'],D['ICC5A'],D['ICC5B'],D['ICC9A'],D['ICC9B'],D['ICC1
 
 from PyPlot.PyPlotClass import *
 pp=PyPlot('paired.trans.repeat.number.pdf')
-pp.multi_bar_vertical_sv_number(Data,legTitle=['in repeat region','not in repeat region'],xLabel=['ICC4A','ICC4B','ICC5A','ICC5B','ICC9A','ICC9B','ICC10A','ICC10B','CHC5A','CHC5B','CHC6A','CHC6B','CHC7A','CHC7B','CHC10A','CHC10B'],legX=0.85, legY=0.98)
+pp.multi_bar_vertical_sv_number2(Data,legTitle=['in repeat region','not in repeat region'],xLabel=['ICC4A','ICC4B','ICC5A','ICC5B','ICC9A','ICC9B','ICC10A','ICC10B','CHC5A','CHC5B','CHC6A','CHC6B','CHC7A','CHC7B','CHC10A','CHC10B'],legX=0.85, legY=0.98)
