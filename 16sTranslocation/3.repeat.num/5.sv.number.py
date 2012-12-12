@@ -1,5 +1,9 @@
 ### python 5.sv.number.py  *.merged
 
+'''
+pyPlotClass.py 258-260 changed for x label vertical
+'''
+
 import sys
 D = dict()
 D2 = dict()
@@ -28,8 +32,6 @@ for key in D2 :
     print(key)
     print(D2[key])
 
-D['ICC5B']=0
-D2['ICC5B']=0
 
 Data=[[D['ICC4A'],D['ICC4B'],D['ICC5A'],D['ICC5B'],D['ICC9A'],D['ICC9B'],D['ICC10A'],D['ICC10B'],D['CHC5A'],D['CHC5B'],D['CHC6A'],D['CHC6B'],D['CHC7A'],D['CHC7B'],D['CHC10A'],D['CHC10B']],[D2['ICC4A'],D2['ICC4B'],D2['ICC5A'],D2['ICC5B'],D2['ICC9A'],D2['ICC9B'],D2['ICC10A'],D2['ICC10B'],D2['CHC5A'],D2['CHC5B'],D2['CHC6A'],D2['CHC6B'],D2['CHC7A'],D2['CHC7B'],D2['CHC10A'],D2['CHC10B']]]
 
