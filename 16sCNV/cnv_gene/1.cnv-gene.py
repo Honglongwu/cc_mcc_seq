@@ -28,7 +28,7 @@ for line in inFile:
             tumor_dep += float(item[5])
             #tumor_len += int(item[3])
         #print(gene+'\t'+nm+'\t'+str(normal_dep)+'\t'+str(tumor_dep)+'\t'+str(normal_dep/normal_len)+'\t'+str(tumor_dep/tumor_len)+'\t'+str(tumor_dep/normal_dep))
-    ouFile.write(gene+'\t'+nm+'\t'+str(normal_dep)+'\t'+str(tumor_dep)+'\t'+str((tumor_dep+1)/(normal_dep+1))+'\n')
+    ouFile.write(gene+'\t'+nm+'\t'+ch+':'+str(start)+':'+str(end)+'\t'+str(normal_dep)+'\t'+str(tumor_dep)+'\t'+str((tumor_dep+1)/(normal_dep+1))+'\n')
 inFile.close()
 ouFile.close()
 
