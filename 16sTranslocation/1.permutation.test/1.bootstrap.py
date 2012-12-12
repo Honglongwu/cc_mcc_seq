@@ -89,7 +89,6 @@ def randomRepeat(inF):
 
     while True:
         line1 = inFile.readline()
-        line2 = inFile.readline()
         if line1:
             fields1 = line1.split('\t')
             ch1 = fields1[0]
