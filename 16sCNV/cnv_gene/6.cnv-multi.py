@@ -10,9 +10,9 @@ for inF in sys.argv[1:]:
         line = line.strip()
         fields = line.split('\t')
         D.setdefault(fields[0], {})
-        if sys.argv[1].find('upper')!=-1:
+        if inF.find('upper')!=-1:
             D[fields[0]][sample] = 1
-        elif sys.argv[1].find('down')!=-1:
+        elif inF.find('down')!=-1:
             D[fields[0]][sample] = -1
     inFile.close()
 
