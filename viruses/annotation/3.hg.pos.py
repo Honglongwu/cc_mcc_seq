@@ -1,4 +1,4 @@
-### py  2.viruse.pos.py *.format
+### py  3.hg.pos.py *.format
 import sys
 
 D = {}
