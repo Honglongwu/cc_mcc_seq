@@ -13,9 +13,7 @@ for line in inFile:
         if int(item)!=0:
             n2 += 1
 
-    if n1 > 1 and sum([int(x) for x in fields[2:6]]):
-        ouFile.write(line+'\n')
-    if n2 > 1 and sum([int(x) for x in fields[6:]]):
+    if n1 > 1 or n2 > 1 :
         ouFile.write(line+'\n')
 
 

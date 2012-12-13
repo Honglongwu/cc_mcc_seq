@@ -20,10 +20,11 @@ def gene_heatmap(iFile,sampleNameList,oFile,figsize=0,rowList=[]) :
             line=line.strip()
             fields=line.split('\t')
             N=[int(x) for x in fields[-8:]]
-            if sum(N[0:8])>score :
-                geneList.append(fields[1])
-                print(fields[1])
-                list1.append([int(x) for x in fields[-8:]])
+            #if sum(N[0:8])>score :
+            geneList.append(fields[1])
+            print(fields[1])
+            print(N)
+            list1.append([int(x) for x in fields[-8:]])
     inFile.close()
     pp=PyPlot(oFile)
     if figsize:
@@ -32,5 +33,5 @@ def gene_heatmap(iFile,sampleNameList,oFile,figsize=0,rowList=[]) :
         pp.heatmap(list1,col=False,xLabel=sampleNameList,yLabel=geneList,grid=True)
 
 #gene_heatmap('SNV.exome.somatic.nonsynonymous.geneLevel.ranksum_test',['ICC4','ICC5','ICC9','ICC10','CHC5','CHC6','CHC7','CHC10'],'heatmap.somatic.nonsynonymous_1_6.pdf',rowList=range(1,7))
-gene_heatmap('6.varScan.copynumber.called.depth_2_upper_down_gene.ranksum_test.recurrent.mc',['ICC4','ICC5','ICC9','ICC10','CHC5','CHC6','CHC7','CHC10'],'6.varScan.copynumber.called.depth_2_upper_down_gene.ranksum_test.recurrent.mc.heatmap.pdf',figsize=(12,18))
+gene_heatmap('6.varScan.copynumber.called.depth_2_upper_down_gene.ranksum_test.recurrent.mc',['ICC4','ICC5','ICC9','ICC10','CHC5','CHC6','CHC7','CHC10'],'6.varScan.copynumber.called.depth_2_upper_down_gene.ranksum_test.recurrent.mc.heatmap.pdf',figsize=(6,8))
 
