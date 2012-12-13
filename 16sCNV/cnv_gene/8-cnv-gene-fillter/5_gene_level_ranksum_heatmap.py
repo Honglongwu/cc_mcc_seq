@@ -32,6 +32,6 @@ def gene_heatmap(iFile,sampleNameList,oFile,figsize=0,rowList=[]) :
     else:
         pp.heatmap(list1,col=False,xLabel=sampleNameList,yLabel=geneList,grid=True)
 
-#gene_heatmap('SNV.exome.somatic.nonsynonymous.geneLevel.ranksum_test',['ICC4','ICC5','ICC9','ICC10','CHC5','CHC6','CHC7','CHC10'],'heatmap.somatic.nonsynonymous_1_6.pdf',rowList=range(1,7))
+#gene_heatmap('6.varScan.copynumber.called.depth_1.5_upper_down_gene.ranksum_test.recurrent.mc',['ICC4','ICC5','ICC9','ICC10','CHC5','CHC6','CHC7','CHC10'],'6.varScan.copynumber.called.depth_1.5_upper_down_gene.ranksum_test.recurrent.mc_1.86.heatmap.pdf',rowList=range(1,87),figsize=(12,18))
 gene_heatmap('6.varScan.copynumber.called.depth_2_upper_down_gene.ranksum_test.recurrent.mc',['ICC4','ICC5','ICC9','ICC10','CHC5','CHC6','CHC7','CHC10'],'6.varScan.copynumber.called.depth_2_upper_down_gene.ranksum_test.recurrent.mc.heatmap.pdf',figsize=(6,8))
 
