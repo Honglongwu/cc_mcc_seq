@@ -22,7 +22,7 @@ for line in inFile:
             p1 = pos - interval
             p2 = pos + interval
             for item in G:
-                if item[1]< p1 <item[2] or item[1] < p2 < item[2]:
+                if fields[0]==item[0] and (item[1]< p1 <item[2] or item[1] < p2 < item[2]):
                     gs.append(item[3])
             ouFile.write(line + '\t' + '\t'.join(set(gs)) + '\n')
 inFile.close()
