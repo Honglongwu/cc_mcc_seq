@@ -1,4 +1,4 @@
-cd /netshare1/home1/szzhongxin/proj1/hansun/16sSVExome/invy
+cd /netshare1/home1/szzhongxin/proj1/hansun/16sSVExome/duppy
 
 
 hg19=/netshare1/home1/people/hansun/GATK/bundle/ucsc.hg19.fasta
@@ -24,6 +24,6 @@ CHC6B=/netshare1/home1/szzhongxin/proj1/hansun/mapping8/6B/6B.bam
 CHC7B=/netshare1/home1/szzhongxin/proj1/hansun/mapping8/7B/7B.bam
 CHC10B=/netshare1/home1/szzhongxin/proj1/hansun/mapping8/10B/10B.bam
 
-SampleID=ICC9A
+SampleID=CHC7A
 
-invy -z . -p -g $hg19 -i ${SampleID} -b ${SampleID}.inv.br.txt -o ${SampleID}.inv.txt -r ${SampleID}.inv_merge.txt -k ${SampleID}.inv.br_merge.txt $CHC10A 
+duppy -z . -p -g $hg19 -i ${SampleID} -b ${SampleID}.br.txt -o ${SampleID}.dup.txt  $CHC10A 
