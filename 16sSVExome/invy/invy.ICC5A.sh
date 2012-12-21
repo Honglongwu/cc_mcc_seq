@@ -9,9 +9,9 @@ ICC9A=/netshare1/home1/szzhongxin/proj1/hansun/mapping5/9A/9A.bam
 ICC10A=/netshare1/home1/szzhongxin/proj1/hansun/mapping5/10A/10A.bam
 
 CHC5A=/netshare1/home1/szzhongxin/proj1/hansun/mapping6/5A/5A.bam
-CHC6A=/netshare1/home1/szzhongxin/proj1/hansun/mapping6/6Ax/6A.bam
-CHC7A=/netshare1/home1/szzhongxin/proj1/hansun/mapping6/7Ax/7A.bam
-CHC10A=/netshare1/home1/szzhongxin/proj1/hansun/mapping6/10Ax/10A.bam
+CHC6A=/netshare1/home1/szzhongxin/proj1/hansun/mapping6/6A/6A.bam
+CHC7A=/netshare1/home1/szzhongxin/proj1/hansun/mapping6/7A/7A.bam
+CHC10A=/netshare1/home1/szzhongxin/proj1/hansun/mapping6/10A/10A.bam
 
 
 ICC4B=/netshare1/home1/szzhongxin/proj1/hansun/mapping7/4B/4B.bam

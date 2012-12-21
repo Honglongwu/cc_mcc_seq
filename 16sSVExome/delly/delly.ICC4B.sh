@@ -26,4 +26,4 @@ CHC10B=/netshare1/home1/szzhongxin/proj1/hansun/mapping8/10B/10B.bam
 
 SampleID=ICC4B
 
-delly -z . -p -g $hg19 -i ${SampleID} -b ${SampleID}.br.txt -o ${SampleID}.del.txt  $CHC10A 
+delly -z . -p -g $hg19 -i ${SampleID} -b ${SampleID}.br.txt -o ${SampleID}.del.txt  $ICC4B 

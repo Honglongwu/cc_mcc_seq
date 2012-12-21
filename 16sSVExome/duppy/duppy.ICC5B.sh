@@ -26,4 +26,4 @@ CHC10B=/netshare1/home1/szzhongxin/proj1/hansun/mapping8/10B/10B.bam
 
 SampleID=ICC5B
 
-duppy -z . -p -g $hg19 -i ${SampleID} -b ${SampleID}.br.txt -o ${SampleID}.dup.txt  $CHC10A 
+duppy -z . -p -g $hg19 -i ${SampleID} -b ${SampleID}.br.txt -o ${SampleID}.dup.txt  $ICC5B 

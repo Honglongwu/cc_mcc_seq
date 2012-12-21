@@ -26,4 +26,4 @@ CHC10B=/netshare1/home1/szzhongxin/proj1/hansun/mapping8/10B/10B.bam
 
 SampleID=ICC5A
 
-jumpy -z . -p -g $hg19 -i ${SampleID} -b ${SampleID}.jmp.br.txt -o ${SampleID}.jmp.txt -r ${SampleID}.jmp_merge.txt -k ${SampleID}.jmp.br_merge.txt $CHC10A 
+jumpy -z . -p -g $hg19 -i ${SampleID} -b ${SampleID}.jmp.br.txt -o ${SampleID}.jmp.txt -r ${SampleID}.jmp_merge.txt -k ${SampleID}.jmp.br_merge.txt $ICC5A 
