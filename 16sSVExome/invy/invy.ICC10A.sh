@@ -26,4 +26,4 @@ CHC10B=/netshare1/home1/szzhongxin/proj1/hansun/mapping8/10B/10B.bam
 
 SampleID=ICC10A
 
-invy -z . -p -g $hg19 -i ${SampleID} -b ${SampleID}.inv.br.txt -o ${SampleID}.inv.txt -r ${SampleID}.inv_merge.txt -k ${SampleID}.inv.br_merge.txt $CHC10A 
+invy -z . -p -g $hg19 -i ${SampleID} -b ${SampleID}.inv.br.txt -o ${SampleID}.inv.txt -r ${SampleID}.inv_merge.txt -k ${SampleID}.inv.br_merge.txt $ICC10A 
