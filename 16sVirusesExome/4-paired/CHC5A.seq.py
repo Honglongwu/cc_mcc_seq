@@ -40,9 +40,11 @@ for line in inFile:
     fs = k.split(':')
 
     if fs[7] == '1':
-        k2 = ':'.join(fs[0:7]+['2']+fs[8:10]+['#2'])
+        #k2 = ':'.join(fs[0:7]+['2']+fs[8:10]+['#2'])
+        k2 = ':'.join(fs[0:7]+['2']+fs[8:11])
     elif fs[7] == '2':
-        k2 = ':'.join(fs[0:7]+['1']+fs[8:10]+['#1'])
+        #k2 = ':'.join(fs[0:7]+['1']+fs[8:10]+['#1'])
+        k2 = ':'.join(fs[0:7]+['1']+fs[8:11])
 
     if k2 in D:
         ouFile.write(k2 + '\n')
