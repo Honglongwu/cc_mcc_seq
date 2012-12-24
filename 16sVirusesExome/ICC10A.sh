@@ -7,7 +7,7 @@ read1sai=ICC10A.unmapped.sai
 bam=ICC10A.unmapped.bam
 sam=ICC10A.unmapped.sam
 
-cd /netshare1/home1/szzhongxin/proj1/hansun/16sVirusesExome/mapping
+cd /netshare1/home1/szzhongxin/proj1/hansun/16sVirusesExome/1-mapping
 
 bwa aln -I \
 	/netshare1/home1/szzhongxin/proj1/hansun/16sVirusesExome/bwa/viruses \

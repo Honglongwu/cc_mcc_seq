@@ -7,7 +7,7 @@ read1sai=CHC7B.unmapped.sai
 bam=CHC7B.unmapped.bam
 sam=CHC7B.unmapped.sam
 
-cd /netshare1/home1/szzhongxin/proj1/hansun/16sVirusesExome/mapping
+cd /netshare1/home1/szzhongxin/proj1/hansun/16sVirusesExome/1-mapping
 
 bwa aln -I \
                 /netshare1/home1/szzhongxin/proj1/hansun/16sVirusesExome/bwa/viruses \
