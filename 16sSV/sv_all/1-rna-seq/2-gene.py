@@ -1,5 +1,5 @@
 inFile = open('potential_fusion.txt')
-ouFile = open('potential_fusion.gene','w')
+ouFile = open('potential_fusion.gene.pos','w')
 D = {}
 while True:
     line1 = inFile.readline()
@@ -40,5 +40,8 @@ sv('translocation.gene.reads')
 
 for k in D2:
     if k in D:
-        ouFile.write(k+'\n')
+        ouFile.write('>'+k+'\n')
+        ouFile.write('\t'.join(D2[k])+'\n')
+        ouFile.write('\t'.join(D[k])+'\n')
+
 ouFile.close()
