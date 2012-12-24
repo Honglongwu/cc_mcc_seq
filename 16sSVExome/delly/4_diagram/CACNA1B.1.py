@@ -6,7 +6,7 @@ mouse, using Diagram_class, key=gene
 from Diagram_class import *
 
 
-inFile=open('ICC4A.br.fasta.blasted')
+inFile=open('CACNA1B.blasted')
 dict1=dict()
 for line in inFile :
     line=line.rstrip()
@@ -31,7 +31,7 @@ for key in dict1 :
 
     d.Set_Blast_RowNum(dict1[key])
 
-    inFile=open('ICC4A.br.fasta.blasted')
+    inFile=open('CACNA1B.blasted')
     for line in inFile :
         line=line.rstrip()
         fields=line.split()
