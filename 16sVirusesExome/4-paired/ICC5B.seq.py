@@ -9,8 +9,7 @@ while True:
     head = inFile.readline().strip()
     seq = inFile.readline().strip()
     if head:
-        D.setdefault(head,[])
-        D[head].append(seq)
+        D[head] = seq
     else:
         break
 inFile.close()
@@ -20,9 +19,7 @@ D2 = dict()
 for line in inFile:
     line = line.strip()
     fields = line.split('\t')
-    k = '>'+fields[0]
-    D2.setdefault(k, [])
-    D2[k].append(line)
+    D2['>' + fields[0]]=line
 inFile.close()
 
 inFile = open(inF2)
@@ -33,24 +30,28 @@ ouFile3 = open(inF2 + '.seq3', 'w')
 for line in inFile:
     line = line.strip()
     fields =line.split('\t')
-    fs = fields[0].split(':')
-    k = '>'+ ':'.join(fs[0:-1])
+    k = '>'+fields[0]
     if k in D:
-        if len(D[k]) > 1:
-            ouFile.write(k + '\n')
-            for item in D[k]:  
-                ouFile.write(item + '\n')
-        elif k in D2:
-            ouFile2.write(k + '\n')
-            for item in D[k]:  
-                ouFile2.write(item + '\t' + line + '\n')
-            #ouFile2.write(k +'\t'+line+ '\n')
-            ouFile2.write(k + '\n')
-            for item in D2[k]:  
-                if item.split('\t')[5]!='*':
-                    ouFile2.write(item + '\n')
+        ouFile.write(k + '\n')
+        ouFile.write(D[k] + '\n')
     else:
         ouFile3.write(k.strip('>') + '\n')
+
+    fs = k.split(':')
+
+    if fs[7] == '1':
+        k2 = ':'.join(fs[0:7]+['2']+fs[8:])
+    elif fs[7] == '2':
+        k2 = ':'.join(fs[0:7]+['1']+fs[8:])
+
+    if k2 in D:
+        ouFile.write(k2 + '\n')
+        ouFile.write(D[k2] + '\n')
+    else:
+        ouFile2.write(k + '\n')
+        ouFile2.write(D[k] + '\t' + line + '\n')
+        ouFile2.write(k2 + '\n')
+        ouFile2.write(D2.get(k2,'None') + '\n')
 
 inFile.close()
 ouFile.close()

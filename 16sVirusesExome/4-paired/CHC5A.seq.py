@@ -51,7 +51,7 @@ for line in inFile:
         ouFile2.write(k + '\n')
         ouFile2.write(D[k] + '\t' + line + '\n')
         ouFile2.write(k2 + '\n')
-        ouFile2.write(D2[k2] + '\n')
+        ouFile2.write(D2.get(k2,'None') + '\n')
 
 inFile.close()
 ouFile.close()
