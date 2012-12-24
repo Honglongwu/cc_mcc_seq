@@ -16,11 +16,11 @@ D2 = dict()
 for k in D:
     D2.setdefault(D[k],0)
     D2[D[k]] += 1
-    if sys.argv[1].find('B') !=-1 :
-        ouFile.write(D[k]+':'+str(D2[D[k]])+'\n')
-        ouFile.write(k+'\n')
-    else:
-        ouFile.write(D[k]+'\n')
-        ouFile.write(k+'\n')
+    #if sys.argv[1].find('B') !=-1 :
+    #    ouFile.write(D[k]+':'+str(D2[D[k]])+'\n')
+    #    ouFile.write(k+'\n')
+    #else:
+    ouFile.write(D[k]+'\n')
+    ouFile.write(k+'\n')
 
 ouFile.close()
