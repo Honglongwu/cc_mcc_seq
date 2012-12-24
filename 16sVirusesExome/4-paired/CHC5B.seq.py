@@ -34,7 +34,7 @@ for line in inFile:
     line = line.strip()
     fields =line.split('\t')
     fs = fields[0].split(':')
-    k = '>'+ ':'.join(fs[0:-1])
+    k = '>'+ ':'.join(fs[0:])
     if k in D:
         if len(D[k]) > 1:
             ouFile.write(k + '\n')
