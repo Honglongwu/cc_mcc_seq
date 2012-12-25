@@ -14,7 +14,8 @@ def chrom_pos() :
     return chrom_pos_dict
 
 chroms=['chr1','chr2','chr3','chr4','chr5','chr6','chr7','chr8','chr9','chr10','chr11','chr12','chr13','chr14','chr15','chr16','chr17','chr18','chr19','chr20','chr21','chr22','chrX','chrY']
-hs=['hs1','hs2','hs3','hs4','hs5','hs6','hs7','hs8','hs9','hs10','hs11','hs12','hs13','hs14','hs15','hs16','hs17','hs18','hs19','hs20','hs21','hs22','hsX','hsY']
+#hs=['hs1','hs2','hs3','hs4','hs5','hs6','hs7','hs8','hs9','hs10','hs11','hs12','hs13','hs14','hs15','hs16','hs17','hs18','hs19','hs20','hs21','hs22','hsX','hsY']
+hs = chroms
 inter=1000000
 
 def sample_scatter(inF) :
