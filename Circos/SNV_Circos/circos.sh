@@ -1,8 +1,8 @@
 cd /netshare1/home1/szzhongxin/proj1/hansun/Circos/SNV_Circos 
 
-#cd ICC4
-#circos
-#
+cd ICC4
+circos
+
 #cd /netshare1/home1/szzhongxin/proj1/hansun/Circos/SNV_Circos 
 #cd ICC5
 #circos
@@ -27,9 +27,9 @@ cd /netshare1/home1/szzhongxin/proj1/hansun/Circos/SNV_Circos
 #cd CHC7
 #circos
 
-cd /netshare1/home1/szzhongxin/proj1/hansun/Circos/SNV_Circos 
-cd CHC10
-circos
+#cd /netshare1/home1/szzhongxin/proj1/hansun/Circos/SNV_Circos 
+#cd CHC10
+#circos
 
 
 #cd /netshare1/home1/szzhongxin/proj1/hansun/Circos/SNV_Circos 
