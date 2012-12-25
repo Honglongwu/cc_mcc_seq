@@ -40,4 +40,4 @@ Data=[[D['ICC4A'],D['ICC5A'],D['ICC9A'],D['ICC10A'],D['CHC5A'],D['CHC6A'],D['CHC
 
 from PyPlot.PyPlotClass import *
 pp=PyPlot('RNAseq.number.pdf')
-pp.multi_bar_vertical(Data,legTitle=['Tumor','Normal'],xLabel=['ICC4','ICC5','ICC9','ICC10','CHC5','CHC6','CHC7','CHC10'],legX=0.85, legY=0.98)
+pp.multi_bar_vertical(Data,legTitle=['Tumor','Normal'],xLabel=['ICC4','ICC5','ICC9','ICC10','CHC5','CHC6','CHC7','CHC10'],legX=0.98, legY=0.98)
