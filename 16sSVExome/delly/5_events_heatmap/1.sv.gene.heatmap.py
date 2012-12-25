@@ -19,7 +19,7 @@ def gene_heatmap(inF,sampleNameList,ouF,figsize=0,labelFontSize=0,rowList=[]):
         geneList.append(key)
     
     pp=PyPlot(ouF)
-    pp.heatmap(LD,col=False,xLabel=sampleNameList,yLabel=geneList,xLabelVertical=True,grid=True,figsize=figsize,labelFontSize=labelFontSize)
-gene_heatmap('1.sv.stat.exon.symbol', ['ICC4A','ICC4B','ICC5A','ICC5B','ICC9A','ICC9B','ICC10A','ICC10B','CHC5A','CHC5B','CHC6A','CHC6B','CHC7A','CHC7B','CHC10A','CHC10B'],'delly.exon.heatmap.pdf',figsize=(6,8))
+    pp.heatmap(LD,col=False,xLabel=sampleNameList,yLabel=geneList,xLabelVertical=True,grid=True,labelFontSize=labelFontSize)
+gene_heatmap('CACNA1B.exome.events', ['ICC4A','ICC4B','ICC5A','ICC5B','ICC9A','ICC9B','ICC10A','ICC10B','CHC5A','CHC5B','CHC6A','CHC6B','CHC7A','CHC7B','CHC10A','CHC10B'],'CACNA1B.exome.events.pdf')
 
 
