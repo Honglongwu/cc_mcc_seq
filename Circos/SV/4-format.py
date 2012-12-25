@@ -13,8 +13,8 @@ def delly(inF):
         ouFile = open(k+'.translocation', 'w')
         for item in D[k]:
             n+=1
-            ouFile.write('tran'+str(n)+'\t'+item[0]+'\t'+item[1]+'\n')
-            ouFile.write('tran'+str(n)+'\t'+item[2]+'\t'+item[3]+'\n')
+            ouFile.write('tran'+str(n)+'\t'+item[0]+'\t'+item[1]+'\t'+item[1]+'\n')
+            ouFile.write('tran'+str(n)+'\t'+item[2]+'\t'+item[3]+'\t'+item[3]+'\n')
         ouFile.close()
 delly('translocation.gene.reads')
 

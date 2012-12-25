@@ -13,8 +13,8 @@ def invy(inF):
         ouFile = open(k+'.inversion', 'w')
         for item in D[k]:
             n+=1
-            ouFile.write('inv'+str(n)+'\t'+item[0]+'\t'+item[1]+'\n')
-            ouFile.write('inv'+str(n)+'\t'+item[0]+'\t'+item[2]+'\n')
+            ouFile.write('inv'+str(n)+'\t'+item[0]+'\t'+item[1]+'\t'+item[1]+'\n')
+            ouFile.write('inv'+str(n)+'\t'+item[0]+'\t'+item[2]+'\t'+item[2]+'\n')
         ouFile.close()
 invy('inversion.gene.reads')
 

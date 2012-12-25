@@ -13,8 +13,8 @@ def delly(inF):
         ouFile = open(k+'.deletion', 'w')
         for item in D[k]:
             n+=1
-            ouFile.write('del'+str(n)+'\t'+item[0]+'\t'+item[1]+'\n')
-            ouFile.write('del'+str(n)+'\t'+item[0]+'\t'+item[2]+'\n')
+            ouFile.write('del'+str(n)+'\t'+item[0]+'\t'+item[1]+'\t'+item[1]+'\n')
+            ouFile.write('del'+str(n)+'\t'+item[0]+'\t'+item[2]+'\t'+item[2]+'\n')
         ouFile.close()
 delly('delition.gene.reads')
 
