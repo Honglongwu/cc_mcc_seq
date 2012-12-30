@@ -1,3 +1,4 @@
+import sys
 inFile = open('16sSV.read.name')
 D = {}
 for line in inFile:
@@ -25,14 +26,10 @@ for k in D:
 #    print(D[k])
 
 
-inFs=['/netshare1/home1/szzhongxin/proj1/fudan/1A/ha',
-        'he']
-D['HWI-ST507_75_5_1_2446_2230_0']='xxxxx'
 
-ouFile = open('16sSV.read.name.paired','w')
-
-for inF in inFs:
+for inF in sys.argv[1:]:
     inFile = open(inF)
+    ouFile = open(inF+'.del.seq','w')
     while True:
         line1 = inFile.readline()
         line2 = inFile.readline()
@@ -57,7 +54,6 @@ for inF in inFs:
             break
 
     inFile.close()
-
-ouFile.close()
+    ouFile.close()
 
 
