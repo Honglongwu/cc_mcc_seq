@@ -15,4 +15,5 @@ def gene2mutation(iFile1,iFile2):
     inFile.close()
     ouFile.close()
 
-gene2mutation('SNV.genome.somatic.ncRNA.geneLevel.ranksum_test','SNV.genome.somatic.ncRNA')
+#gene2mutation('SNV.genome.somatic.ncRNA.geneLevel.ranksum_test','SNV.genome.somatic.ncRNA')
+gene2mutation('SNV.genome.somatic.ncRNA.geneLevel.recurrent','SNV.genome.somatic.ncRNA')
