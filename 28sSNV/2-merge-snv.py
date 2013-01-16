@@ -52,10 +52,20 @@ for line in inFile:
     D[k][26]=fields[-2]
     D[k][27]=fields[-1]
 inFile.close()
-ouFile = open('sum_snp1234.genome_summary','w')
 
+D2 = {}
+inFile = open('SNV.genome.somatic.nonsynonymous.UTR.ncRNA.geneLevel.recurrent.mutation.final')
+for line in inFile:
+    line = line.strip()
+    fields = line.split('\t')
+    D2[fields[1]]=1
+inFile.close()
+
+ouFile = open('sum_snp1234.genome_summary_candidate','w')
 for k in D:
-    ouFile.write(k+'\t'+'\t'.join(D[k])+'\n')
+    gene = k.split('\t')[1]
+    if gene in D2:
+        ouFile.write(k+'\t'+'\t'.join(D[k])+'\n')
 ouFile.close()
 
 
