@@ -44,9 +44,11 @@ for i in range(0,len(seq),2):
     inFile = open(seq[i])
     reads1 = inFile.readlines()
     inFile.close()
+    print(len(reads1))
     inFile = open(seq[i+1])
     reads2 = inFile.readlines()
     inFile.close()
+    print(len(reads2))
     for x in range(0,len(reads1),3):
         ouFile.write(reads1[x])
         ouFile.write(reads1[x+1])
