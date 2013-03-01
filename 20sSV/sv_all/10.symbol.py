@@ -19,7 +19,9 @@ def symbol(inF):
 
 symbol('invy.jumpy.duppy.1.sv.stat.exon.symbol.heatmap')
 symbol('invy.jumpy.duppy.1.sv.stat.exon.symbol.heatmap2')
-symbol('')
-symbol('')
-symbol('')
-symbol('')
+symbol('invy.jumpy.duppy.1.sv.stat.gene.symbol.heatmap')
+symbol('invy.jumpy.duppy.1.sv.stat.gene.symbol.heatmap2')
+symbol('invy.jumpy.duppy.1.sv.stat.gene.symbol.heatmap3')
+symbol('invy.jumpy.duppy.1.sv.stat.gene.symbol.heatmap4')
+symbol('delly.1.sv.stat.exon.symbol.heatmap')
+symbol('delly.1.sv.stat.exon.symbol.heatmap2')
