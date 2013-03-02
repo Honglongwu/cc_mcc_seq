@@ -14,10 +14,10 @@ for d in [5,10,15,20,25,30,40,50]:
             os.system(cmd)
         
         head = 27
-        num = [0] * 16
-        num2 = [0] * 16
-        somatic = [0] * 8 
-        somatic2 = [0] * 8 
+        num = [0] * 20
+        num2 = [0] * 20
+        somatic = [0] * 10 
+        somatic2 = [0] * 10 
         for ch in chrs:
             f = 'var.flt.%s.vcf'%ch
             inFile=open(f)
