@@ -30,8 +30,8 @@ ch=[chr1,chr2,chr3,chr4,chr5,chr6,chr7,chr8,
 ch_label=['chr1','chr2','chr3','chr4','chr5','chr6','chr7','chr8',
         'chr9','chr10','chr11','chr12','chr13','chr14','chr15','chr16',
         'chr17','chr18','chr19','chr20','chr21','chr22','chrX','chrY']
-sample=['ICC4A','ICC4B','ICC5A','ICC5B','ICC9A','ICC9B','ICC10A','ICC10B',
-        'CHC5A','CHC5B','CHC6A','CHC6B','CHC7A','CHC7B','CHC10A','CHC10B']
+sample=['ICC1A','ICC2A','ICC3A','ICC4A','ICC5A','ICC6A','ICC7A','ICC8A','ICC9A','ICC10A',
+        'CHC1A','CHC2A','CHC3A','CHC4A','CHC5A','CHC6A','CHC7A','CHC8A','CHC9A','CHC10A']
 
 inFile = open('1.depth')
 row = 0
@@ -43,14 +43,14 @@ for line in inFile:
     row += 1
     tmp = []
     if row % 2 == 1:
-        for i in range(-16,-8):
+        for i in range(20):
             tmp.append(float(fields[i]))
-            tmp.append(float(fields[i+8]))
+            #tmp.append(float(fields[i+8]))
         depth.append(tmp)
     else:
-        for i in range(-16,-8):
+        for i in range(20):
             tmp.append(float(fields[i]))
-            tmp.append(float(fields[i+8]))
+            #tmp.append(float(fields[i+8]))
         site.append(tmp)
 
 inFile.close()
