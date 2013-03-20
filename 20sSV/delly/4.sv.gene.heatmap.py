@@ -12,6 +12,20 @@ def gene_heatmap(inF,sampleNameList,ouF,figsize=0,rowList=[]):
             D[item][row]+=1
     inFile.close()
 
+    D2 = {}
+    for k in D:
+        fields = k.split('/')
+        if len(fields)>1:
+            D2[k]=D[k]
+    for k in D2: 
+        D.pop(k)
+        fields = k.split('/')
+        k2 = fields[0]+'/'+'...'
+        if k2 not in D:
+            D[k2] = D2[k]
+        else:
+            print('warning: ' + k2) 
+
     LD = []
     geneList = []
     for key in D :
