@@ -32,7 +32,11 @@ def gene_heatmap(inF,sampleNameList,ouF,figsize=0,rowList=[]):
         if sum(D[key])>1:
             LD.append(D[key])
             geneList.append(key)
-    print(geneList)
+
+    ouFile = open(ouF+'.gene', 'w')
+    for i in range(len(geneList)):
+        ouFile.write(geneList[i]+'\t'+'\t'.join([str(x) for x in LD[i]])+'\n')
+    ouFile.close()
     
     pp=PyPlot(ouF)
     pp.heatmap(LD,col=False,xLabel=sampleNameList,yLabel=geneList,xLabelVertical=True,grid=True)
