@@ -23,18 +23,18 @@ for line in inFile:
 inFile.close()
 
 
-inFile = open('sum_snv16sExome.genome_summary')
-ouFile1  = open('ICC_whole_rna-seq','w')
-ouFile2  = open('CHC_whole_rna-seq','w')
-ouFile3  = open('ICC_whole_CHC_rna-seq','w')
+inFile = open('SNV.exome.somatic.nonsynonymous.geneLevel')
+ouFile1  = open('ICC_somatic_rna-seq','w')
+ouFile2  = open('CHC_somatic_rna-seq','w')
+ouFile3  = open('ICC_CHC_somatic_rna-seq','w')
 for line in inFile:
     line = line.strip()
     fields = line.split('\t')
-    if fields[1] in D1:
+    if fields[0] in D1:
         ouFile1.write(line+'\n')
-    if fields[1] in D2:
+    if fields[0] in D2:
         ouFile2.write(line+'\n')
-    if fields[1] in D3:
+    if fields[0] in D3:
         ouFile3.write(line+'\n')
 inFile.close()
 ouFile1.close()
