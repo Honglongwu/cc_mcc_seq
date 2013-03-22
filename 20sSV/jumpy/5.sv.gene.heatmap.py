@@ -17,15 +17,14 @@ def gene_heatmap(inF,sampleNameList,ouF,figsize=0,rowList=[]):
         fields = k.split(':')
         if len(fields[0].split('/'))>1 or len(fields[1].split('/'))>1:
             D2[k]=D[k]
-    print(D2)        
     for k in D2: 
         D.pop(k)
         fields = k.split(':')
-        if fields[0].split('/')>1:
+        if len(fields[0].split('/'))>1:
             k2 = fields[0].split('/')[0]+'/'+'...'+':'+fields[1]
-        elif fields[1].split('/')>1:
+        elif len(fields[1].split('/'))>1:
             k2 = fields[0]+':'+fields[1].split('/')[0]+'/'+'...'
-        elif k2 not in D:
+        if k2 not in D:
             D[k2] = D2[k]
         else:
             print('warning: ' + k2) 
