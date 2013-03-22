@@ -12,13 +12,12 @@ V['NC_007605.1']='Human herpesvirus 4 type 1'
 V['NC_009334.1']='Human herpesvirus 4'
 V['NC_003977.1']='Hepatitis B virus'
 
-def foo(x):
-    if x >= 8:
+
+def foo(m):
+    if m >=8:
         return 1
     else:
         return 0
-
-
 
 def gene_heatmap(sampleNameList, ouF, figsize=0, rowList=[]):
     D = dict()
