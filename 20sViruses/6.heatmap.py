@@ -12,6 +12,14 @@ V['NC_007605.1']='Human herpesvirus 4 type 1'
 V['NC_009334.1']='Human herpesvirus 4'
 V['NC_003977.1']='Hepatitis B virus'
 
+def foo(x):
+    if x >= 8:
+        return 1
+    else:
+        return 0
+
+
+
 def gene_heatmap(sampleNameList, ouF, figsize=0, rowList=[]):
     D = dict()
     D2 = dict()
@@ -28,9 +36,9 @@ def gene_heatmap(sampleNameList, ouF, figsize=0, rowList=[]):
         inFile.close()
     D3 = {}
     D4 = {}
-    D3['Human herpesvirus']=[if x >=8: x=1 else:x=0 for x in (numpy.array(D['NC_006273.2'])+numpy.array(D['NC_000898.1'])+numpy.array(D['NC_007605.1'])+numpy.array(D['NC_009334.1']))]
-    D3['Hepatitis B virus']=[if x >=8: x= 1 else:x =0 int(math.log(x+1,2)) for x in D['NC_003977.1']]
-    D3['Enterobacteria phage M13']=[if x >=8: x=1 else: x= 0 for x in D['NC_003287.2']]
+    D3['Human herpesvirus']=[foo(x) for x in (numpy.array(D['NC_006273.2'])+numpy.array(D['NC_000898.1'])+numpy.array(D['NC_007605.1'])+numpy.array(D['NC_009334.1']))]
+    D3['Hepatitis B virus']=[foo(x) for x in D['NC_003977.1']]
+    D3['Enterobacteria phage M13']=[foo(x) for x in D['NC_003287.2']]
 
     D4['Human herpesvirus']=numpy.array(D['NC_006273.2'])+numpy.array(D['NC_000898.1'])+numpy.array(D['NC_007605.1'])+numpy.array(D['NC_009334.1'])
     D4['Hepatitis B virus']=D['NC_003977.1']
