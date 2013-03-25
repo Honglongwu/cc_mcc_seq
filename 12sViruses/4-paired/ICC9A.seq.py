@@ -1,7 +1,7 @@
 import sys
-inF = 'ICC1A.unmapped.fa'
-inF2 = 'ICC1A.unmapped.sam.mapped.fa.fa.blasted.top'
-inF3 = '../ICC1A.unmapped'
+inF = 'ICC9A.unmapped.fa'
+inF2 = 'ICC9A.unmapped.sam.mapped.fa.fa.blasted.top'
+inF3 = '../ICC9A.unmapped'
 
 inFile = open(inF)
 D = dict()
@@ -40,9 +40,9 @@ for line in inFile:
     fs = k.split(':')
 
     if fs[7] == '1':
-        k2 = ':'.join(fs[0:7]+['2']+fs[8:10]+['#2'])
+        k2 = ':'.join(fs[0:7]+['2']+fs[8:])
     elif fs[7] == '2':
-        k2 = ':'.join(fs[0:7]+['1']+fs[8:10]+['#1'])
+        k2 = ':'.join(fs[0:7]+['1']+fs[8:])
 
     if k2 in D:
         ouFile.write(k2 + '\n')
