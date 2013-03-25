@@ -1,5 +1,5 @@
 D1 = {}
-inFile = open('/fs01/szzhongxin/proj1/hansun/RNAseq/3-20/Both.txt')
+inFile = open('/fs01/szzhongxin/proj1/hansun/RNAseq/3-20/Exome_Both.txt')
 for line in inFile:
     line = line.strip()
     fields = line.split('\t')
@@ -7,7 +7,7 @@ for line in inFile:
 inFile.close()
 
 D2 = {}
-inFile = open('/fs01/szzhongxin/proj1/hansun/RNAseq/3-20/Specific_ICC.txt')
+inFile = open('/fs01/szzhongxin/proj1/hansun/RNAseq/3-20/Exome_ICC_Specific.txt')
 for line in inFile:
     line = line.strip()
     fields = line.split('\t')
@@ -15,7 +15,7 @@ for line in inFile:
 inFile.close()
 
 D3 = {}
-inFile = open('/fs01/szzhongxin/proj1/hansun/RNAseq/3-20/Specific_MCC.txt')
+inFile = open('/fs01/szzhongxin/proj1/hansun/RNAseq/3-20/Exome_CHC_Specific.txt')
 for line in inFile:
     line = line.strip()
     fields = line.split('\t')
