@@ -13,7 +13,7 @@ def reads(inF):
 
     D2 = {}
     for k in D:
-        if k.split(':')[1].find('B')==-1:
+        if k.split(':')[2].find('B')==-1:
             flag = 0
             for item in D[k]:
                 s = re.split(r'\s+',item)
