@@ -37,12 +37,20 @@ for line in inFile:
     else:
         ouFile3.write(k.strip('>') + '\n')
 
-    fs = k.split(':')
+    if k.find('_') != -1:
+        fs = k.split('_')
+        if fs[7] == '1':
+            k2 = '_'.join(fs[0:8]+['2'])
+        elif fs[7] == '2':
+            k2 = '_'.join(fs[0:8]+['1'])
 
-    if fs[7] == '1':
-        k2 = ':'.join(fs[0:7]+['2']+fs[8:10]+['#2'])
-    elif fs[7] == '2':
-        k2 = ':'.join(fs[0:7]+['1']+fs[8:10]+['#1'])
+    if k.find(':') != -1:
+        fs = k.split(':')
+        if fs[7] == '1':
+            k2 = ':'.join(fs[0:7]+['2']+fs[8:10]+['#2'])
+        elif fs[7] == '2':
+            k2 = ':'.join(fs[0:7]+['1']+fs[8:10]+['#1'])
+
 
     if k2 in D:
         ouFile.write(k2 + '\n')
