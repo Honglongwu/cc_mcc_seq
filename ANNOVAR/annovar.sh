@@ -55,5 +55,8 @@ cd /netshare1/home1/szzhongxin/proj1/hansun/ANNOVAR
 #perl annovar/convert2annovar.pl --format vcf4 --includeinfo snv16sExome/var.flt.vcf >snv16sExome/snv16sExome.var.flt.annovar
 #perl annovar/summarize_annovar.pl snv16sExome/snv16sExome.var.flt.annovar annovar/humandb --buildver hg19  --verdbsnp 135 --ver1000g 1000g2012feb -outfile snv16sExome/sum_snv16sExome
 
-perl annovar/convert2annovar.pl --format vcf4 --includeinfo Lundberg-Illumina/var.flt.vcf >Lundberg-Illumina/var.flt.annovar
-perl annovar/summarize_annovar.pl Lundberg-Illumina/var.flt.annovar annovar/humandb --buildver hg19  --verdbsnp 135 --ver1000g 1000g2012feb -outfile Lundberg-Illumina/sum_snv
+#perl annovar/convert2annovar.pl --format vcf4 --includeinfo Lundberg-Illumina/var.flt.vcf >Lundberg-Illumina/var.flt.annovar
+#perl annovar/summarize_annovar.pl Lundberg-Illumina/var.flt.annovar annovar/humandb --buildver hg19  --verdbsnp 135 --ver1000g 1000g2012feb -outfile Lundberg-Illumina/sum_snv
+
+
+perl annovar/annotate_variation.pl -downdb -webfrom annovar snp137   annovar/humandb/ -buildver hg19
