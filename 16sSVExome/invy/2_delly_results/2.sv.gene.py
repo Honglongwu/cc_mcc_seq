@@ -11,7 +11,7 @@ def uniqueList(inlist):
 
 
 genes=[]
-inFile1=open('/fs01/szzhongxin/proj1/hansun/annotation/annovar/humandb/hg19_refGene.txt','r')
+inFile1=open('/netshare1/home1/szzhongxin/proj1/hansun/annotation/annovar/humandb/hg19_refGene.txt','r')
 
 for line in inFile1 :
     fields=line.split('\t')
