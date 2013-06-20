@@ -31,6 +31,6 @@ def reads(inF):
         ouFile.write(item[0]+ '\t' +item[1]+ '\n')
     ouFile.close()
             
-reads('16s-exome.duplication.exon.reads')
-reads('16s-exome.duplication.gene.reads')
+reads('16s-exome.translocation.exon.reads')
+reads('16s-exome.translocation.gene.reads')
 

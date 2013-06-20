@@ -13,17 +13,16 @@ def reads(inF):
 
     D2 = {}
     for k in D:
-        if k.split(':')[1].find('B')==-1:
-            flag = 0
-            for item in D[k]:
-                s = re.split(r'\s+',item)
-                if len(s)>=2:
-                    if len(s[0])>30 and len(s[-1])>30:
-                        D2[k]= ''.join(s)
-                        flag = 1
-                        break
-            if flag == 0:
-                print('warning: '+ k)
+        flag = 0
+        for item in D[k]:
+            s = re.split(r'\s+',item)
+            if len(s)>=2:
+                if len(s[0])>30 and len(s[-1])>30:
+                    D2[k]= ''.join(s)
+                    flag = 1
+                    break
+        if flag == 0:
+            print('warning: '+ k)
 
     ouFile = open(inF+'.formated', 'w')
     d = D2.items()
